@@ -1,0 +1,2301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Washim Akram - Software Engineer and Software Engineer based in Vienna, Austria. Experienced in SQL, XML, JSON, JDBC, troubleshooting, testing and backend systems."
+  >
+
+  <title>Washim Akram | Software Engineer</title>
+
+  <style>
+    /* ========================================
+       GLOBAL
+    ======================================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #08111f;
+      --bg-secondary: #0d1728;
+      --card: #111d31;
+      --card-hover: #16253d;
+
+      --text: #eef4ff;
+      --text-secondary: #9eabc0;
+
+      --primary: #48b7ff;
+      --primary-dark: #159be8;
+      --accent: #7c6cff;
+
+      --border: rgba(255, 255, 255, 0.08);
+
+      --shadow:
+        0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    body.light {
+      --bg: #f7f9fc;
+      --bg-secondary: #eef2f7;
+      --card: #ffffff;
+      --card-hover: #f6f9ff;
+
+      --text: #101827;
+      --text-secondary: #64748b;
+
+      --border: #dfe6ef;
+
+      --shadow:
+        0 20px 50px rgba(30, 50, 80, 0.08);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+
+      transition:
+        background 0.3s ease,
+        color 0.3s ease;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    section {
+      padding: 110px 8%;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin: auto;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .section-heading span {
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .section-heading h2 {
+      margin-top: 8px;
+      font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    .section-heading p {
+      max-width: 650px;
+      margin: 12px auto 0;
+      color: var(--text-secondary);
+    }
+
+
+    /* ========================================
+       NAVIGATION
+    ======================================== */
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+
+      background: rgba(8, 17, 31, 0.85);
+      backdrop-filter: blur(16px);
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    body.light header {
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    nav {
+      max-width: 1180px;
+      margin: auto;
+
+      min-height: 76px;
+      padding: 0 24px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.4rem;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      transition: 0.25s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .theme-btn,
+    .menu-btn {
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+
+      width: 42px;
+      height: 42px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .menu-btn {
+      display: none;
+    }
+
+
+    /* ========================================
+       HERO
+    ======================================== */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+
+      padding-top: 130px;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+
+      width: 500px;
+      height: 500px;
+
+      position: absolute;
+      top: 100px;
+      right: -150px;
+
+      background: var(--primary);
+      opacity: 0.08;
+
+      border-radius: 50%;
+      filter: blur(40px);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+
+      gap: 70px;
+      align-items: center;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 8px 14px;
+
+      border: 1px solid var(--border);
+      border-radius: 100px;
+
+      color: var(--text-secondary);
+      background: var(--card);
+
+      margin-bottom: 25px;
+      font-size: 0.9rem;
+    }
+
+    .availability-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #3dcc75;
+
+      box-shadow:
+        0 0 0 4px rgba(61, 204, 117, 0.12);
+    }
+
+    .hero h1 {
+      font-size: clamp(3.2rem, 8vw, 6rem);
+      line-height: 0.98;
+      letter-spacing: -3px;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero h2 {
+      margin-top: 22px;
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .hero-description {
+      max-width: 720px;
+      color: var(--text-secondary);
+
+      font-size: 1.06rem;
+      margin: 24px 0 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+
+      min-height: 49px;
+      padding: 0 22px;
+
+      border-radius: 10px;
+
+      font-weight: 700;
+
+      transition:
+        transform 0.25s,
+        background 0.25s,
+        border-color 0.25s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #06111e;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border);
+      background: var(--card);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary);
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+
+      margin-top: 32px;
+
+      color: var(--text-secondary);
+      font-size: 0.93rem;
+    }
+
+    .hero-links a:hover {
+      color: var(--primary);
+    }
+
+
+    /* HERO TERMINAL */
+
+    .hero-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.profile-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  padding: 5px;
+
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--accent)
+  );
+
+  box-shadow:
+    0 15px 45px rgba(72, 183, 255, 0.18);
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 4px solid var(--bg);
+}
+
+    .terminal {
+      background: #050a12;
+
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 18px;
+
+      box-shadow: var(--shadow);
+
+      overflow: hidden;
+    }
+
+    .terminal-header {
+      padding: 14px 18px;
+
+      display: flex;
+      gap: 7px;
+
+      border-bottom:
+        1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .terminal-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+    }
+
+    .terminal-dot:nth-child(1) {
+      background: #ff5f57;
+    }
+
+    .terminal-dot:nth-child(2) {
+      background: #febc2e;
+    }
+
+    .terminal-dot:nth-child(3) {
+      background: #28c840;
+    }
+
+    .terminal-body {
+      padding: 27px;
+
+      min-height: 330px;
+
+      font-family:
+        "Courier New",
+        monospace;
+
+      font-size: 0.9rem;
+      line-height: 1.9;
+      color: #b9c4d4;
+    }
+
+    .terminal-blue {
+      color: #53c1ff;
+    }
+
+    .terminal-green {
+      color: #61d894;
+    }
+
+    .terminal-purple {
+      color: #ab91ff;
+    }
+
+
+    /* ========================================
+       ABOUT
+    ======================================== */
+
+    .about {
+      background: var(--bg-secondary);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 55px;
+      align-items: start;
+    }
+
+    .about-text p {
+      color: var(--text-secondary);
+      margin-bottom: 17px;
+    }
+
+    .about-text strong {
+      color: var(--text);
+    }
+
+    .quick-info {
+      display: grid;
+      gap: 15px;
+    }
+
+    .quick-info-card {
+      padding: 21px;
+
+      border: 1px solid var(--border);
+      border-radius: 13px;
+
+      background: var(--card);
+    }
+
+    .quick-info-card small {
+      display: block;
+      color: var(--text-secondary);
+      margin-bottom: 5px;
+    }
+
+    .quick-info-card strong {
+      font-size: 1rem;
+    }
+
+
+    /* ========================================
+       SKILLS
+    ======================================== */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .skill-card {
+      padding: 27px;
+
+      background: var(--card);
+
+      border: 1px solid var(--border);
+      border-radius: 15px;
+
+      transition:
+        transform 0.25s,
+        border-color 0.25s,
+        background 0.25s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-7px);
+      border-color: var(--primary);
+      background: var(--card-hover);
+    }
+
+    .skill-icon {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .skill-card h3 {
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-tags span {
+      padding: 5px 10px;
+
+      background:
+        rgba(72, 183, 255, 0.08);
+
+      border:
+        1px solid rgba(72, 183, 255, 0.15);
+
+      border-radius: 7px;
+
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+    }
+
+
+    /* ========================================
+       EXPERIENCE
+    ======================================== */
+
+    .experience {
+      background: var(--bg-secondary);
+    }
+
+    .timeline {
+      max-width: 850px;
+      margin: auto;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: "";
+
+      position: absolute;
+      left: 10px;
+      top: 12px;
+      bottom: 10px;
+
+      width: 2px;
+      background: var(--border);
+    }
+
+    .timeline-item {
+      position: relative;
+
+      padding-left: 45px;
+      padding-bottom: 40px;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+
+      left: 3px;
+      top: 8px;
+
+      width: 16px;
+      height: 16px;
+
+      border-radius: 50%;
+
+      background: var(--primary);
+
+      border: 4px solid var(--bg-secondary);
+    }
+
+    .timeline-card {
+      background: var(--card);
+
+      border: 1px solid var(--border);
+      border-radius: 16px;
+
+      padding: 28px;
+
+      transition: border-color 0.25s;
+    }
+
+    .timeline-card:hover {
+      border-color: var(--primary);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+
+      margin-bottom: 13px;
+    }
+
+    .timeline-header h3 {
+      font-size: 1.25rem;
+    }
+
+    .company {
+      color: var(--primary);
+      margin-top: 2px;
+    }
+
+    .date {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+    }
+
+    .timeline-card ul {
+      list-style: disc;
+      padding-left: 20px;
+      color: var(--text-secondary);
+    }
+
+    .timeline-card li {
+      margin-bottom: 8px;
+    }
+
+
+    /* ========================================
+       EDUCATION
+    ======================================== */
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .education-card {
+      background: var(--card);
+
+      border: 1px solid var(--border);
+      border-radius: 16px;
+
+      padding: 30px;
+    }
+
+    .education-card .year {
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .education-card h3 {
+      margin-bottom: 7px;
+    }
+
+    .education-card p {
+      color: var(--text-secondary);
+    }
+
+
+    /* ========================================
+       LANGUAGES
+    ======================================== */
+
+    .languages {
+      background: var(--bg-secondary);
+    }
+
+    .language-grid {
+      max-width: 850px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .language-card {
+      padding: 28px;
+      text-align: center;
+
+      background: var(--card);
+
+      border: 1px solid var(--border);
+      border-radius: 15px;
+    }
+
+    .language-card h3 {
+      margin-bottom: 5px;
+    }
+
+    .language-card p {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+
+    /* ========================================
+       CONTACT
+    ======================================== */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 45px;
+    }
+
+    .contact-info h3 {
+      font-size: 1.7rem;
+      margin-bottom: 15px;
+    }
+
+    .contact-info > p {
+      color: var(--text-secondary);
+      margin-bottom: 30px;
+    }
+
+    .contact-row {
+      margin-bottom: 18px;
+    }
+
+    .contact-row small {
+      display: block;
+      color: var(--text-secondary);
+    }
+
+    .contact-row a:hover {
+      color: var(--primary);
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+
+      border: 1px solid var(--border);
+
+      background: var(--card);
+      color: var(--text);
+
+      padding: 15px 16px;
+
+      border-radius: 10px;
+      outline: none;
+
+      transition: border-color 0.25s;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--primary);
+    }
+
+    .contact-form textarea {
+      min-height: 160px;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      border: 0;
+      cursor: pointer;
+    }
+
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+
+    footer {
+      border-top: 1px solid var(--border);
+
+      padding: 32px 8%;
+
+      color: var(--text-secondary);
+      text-align: center;
+
+      font-size: 0.9rem;
+    }
+
+
+    /* ========================================
+       RESPONSIVE
+    ======================================== */
+
+    @media (max-width: 950px) {
+
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .terminal {
+        max-width: 650px;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+    }
+
+
+    @media (max-width: 700px) {
+
+      section {
+        padding: 85px 6%;
+      }
+
+      .menu-btn {
+        display: grid;
+      }
+
+      .nav-links {
+        display: none;
+
+        position: absolute;
+        left: 0;
+        top: 76px;
+
+        width: 100%;
+
+        padding: 25px;
+
+        background: var(--bg);
+
+        border-bottom:
+          1px solid var(--border);
+
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links li {
+        text-align: center;
+      }
+
+      .theme-btn {
+        margin: auto;
+      }
+
+      .hero {
+        text-align: center;
+      }
+
+      .hero-grid {
+        gap: 45px;
+      }
+
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-buttons,
+      .hero-links {
+        justify-content: center;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .skills-grid,
+      .education-grid,
+      .language-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-header {
+        display: block;
+      }
+
+      .date {
+        margin-top: 8px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- ========================================
+       NAVIGATION
+  ======================================== -->
+
+  <header>
+
+    <nav>
+
+      <a href="#home" class="logo">
+        Washim<span>.</span>
+      </a>
+
+
+      <ul class="nav-links" id="navLinks">
+
+        <li>
+          <a href="#about">About</a>
+        </li>
+
+        <li>
+          <a href="#skills">Skills</a>
+        </li>
+
+        <li>
+          <a href="#experience">Experience</a>
+        </li>
+
+        <li>
+          <a href="#education">Education</a>
+        </li>
+
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+
+        <li>
+          <button
+            class="theme-btn"
+            id="themeBtn"
+            aria-label="Toggle theme"
+          >
+            ☀
+          </button>
+        </li>
+
+      </ul>
+
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Open navigation"
+      >
+        ☰
+      </button>
+
+    </nav>
+
+  </header>
+
+
+  <!-- ========================================
+       HERO
+  ======================================== -->
+
+  <section class="hero" id="home">
+
+    <div class="container hero-grid">
+
+      <div>
+
+        <div class="availability">
+
+          <div class="availability-dot"></div>
+
+          Available for full-time opportunities
+
+        </div>
+
+
+        <h1>
+          Washim
+          <span>Akram.</span>
+        </h1>
+
+
+        <h2>
+          Software Engineer
+        </h2>
+
+
+        <p class="hero-description">
+
+          Software engineer based in Vienna with experience
+          supporting production applications, investigating
+          technical incidents, maintaining SQL-based services,
+          testing software changes and troubleshooting complex
+          application and database issues.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+          <a
+            href="#experience"
+            class="btn btn-primary"
+          >
+            View Experience
+          </a>
+
+
+          <a
+            href="Washim_Akram_Altova_Software_Support_Engineer_CV.pdf"
+            class="btn btn-secondary"
+            download
+          >
+            ↓ Download CV
+          </a>
+
+        </div>
+
+
+        <div class="hero-links">
+
+          <a
+            href="mailto:akram116223@gmail.com"
+          >
+            ✉ Email
+          </a>
+
+
+          <a
+            href="https://linkedin.com/in/washim-akram"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ↗ LinkedIn
+          </a>
+
+
+          <span>
+            📍 Vienna, Austria
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- TERMINAL / DEVELOPER CARD -->
+
+    <div class="hero-right">
+
+        <div class="profile-photo">
+            <img
+            src="washim-akram.jpg"
+            alt="Washim Akram - Software Engineer"
+            >
+        </div>
+
+        <div class="terminal">
+
+        <div class="terminal-header">
+
+          <span class="terminal-dot"></span>
+          <span class="terminal-dot"></span>
+          <span class="terminal-dot"></span>
+
+        </div>
+
+
+        <div class="terminal-body">
+
+          <div>
+            <span class="terminal-blue">
+              washim@portfolio
+            </span>
+            :~$ whoami
+          </div>
+
+          <div class="terminal-green">
+            Software Engineer
+          </div>
+
+          <br>
+
+
+          <div>
+            <span class="terminal-blue">
+              washim@portfolio
+            </span>
+            :~$ skills --core
+          </div>
+
+          <div>
+            SQL • XML • XSD • JSON
+          </div>
+
+          <div>
+            JDBC • ETL • Troubleshooting
+          </div>
+
+          <div>
+            Linux • Windows • Docker
+          </div>
+
+          <br>
+
+
+          <div>
+            <span class="terminal-blue">
+              washim@portfolio
+            </span>
+            :~$ education
+          </div>
+
+          <div class="terminal-purple">
+            MSc Computer Science
+          </div>
+
+          <div>
+            University of Vienna
+          </div>
+
+          <br>
+
+
+          <div>
+            <span class="terminal-green">
+              ✓ Ready for the next challenge.
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       ABOUT
+  ======================================== -->
+
+  <section class="about" id="about">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span>About</span>
+
+        <h2>About Me</h2>
+
+        <p>
+          Software engineering, technical support and
+          production-system experience.
+        </p>
+
+      </div>
+
+
+      <div class="about-grid">
+
+        <div class="about-text">
+
+          <p>
+            I'm <strong>Washim Akram</strong>, a Software
+            Engineer and Software Engineer currently
+            based in Vienna, Austria.
+          </p>
+
+
+          <p>
+            My professional experience includes supporting
+            production applications, troubleshooting application
+            and database problems, investigating incidents,
+            validating software changes and maintaining
+            SQL-based data services.
+          </p>
+
+
+          <p>
+            I have hands-on experience with
+            <strong>
+              SQL, Microsoft SQL Server, MySQL, MongoDB,
+              XML, XSD, XSLT, XPath, XQuery, JSON,
+              JSON Schema, JDBC and ETL workflows.
+            </strong>
+          </p>
+
+
+          <p>
+            I enjoy analysing technical problems,
+            identifying their underlying causes and communicating
+            solutions clearly to users and engineering teams.
+          </p>
+
+
+          <p>
+            I'm currently completing my
+            <strong>
+              Master's degree in Computer Science at the
+              University of Vienna
+            </strong>
+            and am available for full-time employment.
+          </p>
+
+        </div>
+
+
+        <div class="quick-info">
+
+          <div class="quick-info-card">
+
+            <small>Current Location</small>
+
+            <strong>
+              Vienna, Austria
+            </strong>
+
+          </div>
+
+
+          <div class="quick-info-card">
+
+            <small>Primary Focus</small>
+
+            <strong>
+              Software Support & Troubleshooting
+            </strong>
+
+          </div>
+
+
+          <div class="quick-info-card">
+
+            <small>Education</small>
+
+            <strong>
+              MSc Computer Science
+            </strong>
+
+          </div>
+
+
+          <div class="quick-info-card">
+
+            <small>Work Authorization</small>
+
+            <strong>
+              Eligible to work in Austria
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       SKILLS
+  ======================================== -->
+
+  <section id="skills">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span>Expertise</span>
+
+        <h2>Technical Skills</h2>
+
+        <p>
+          Technologies and tools I have worked with across
+          production systems, databases and application support.
+        </p>
+
+      </div>
+
+
+      <div class="skills-grid">
+
+
+        <!-- SUPPORT -->
+
+        <div class="skill-card">
+
+          <div class="skill-icon">
+            🛠
+          </div>
+
+          <h3>
+            Support & Troubleshooting
+          </h3>
+
+          <div class="skill-tags">
+
+            <span>Incident Analysis</span>
+
+            <span>Application Support</span>
+
+            <span>Remote Support</span>
+
+            <span>Database Diagnosis</span>
+
+            <span>Service Requests</span>
+
+            <span>Change Validation</span>
+
+          </div>
+
+        </div>
+
+
+        <!-- DATABASE -->
+
+        <div class="skill-card">
+
+          <div class="skill-icon">
+            🗄
+          </div>
+
+          <h3>
+            Databases
+          </h3>
+
+          <div class="skill-tags">
+
+            <span>SQL</span>
+
+            <span>Microsoft SQL Server</span>
+
+            <span>MySQL</span>
+
+            <span>MongoDB</span>
+
+            <span>Stored Procedures</span>
+
+            <span>ETL</span>
+
+          </div>
+
+        </div>
+
+
+        <!-- XML -->
+
+        <div class="skill-card">
+
+          <div class="skill-icon">
+            &lt;/&gt;
+          </div>
+
+          <h3>
+            XML & Data Technologies
+          </h3>
+
+          <div class="skill-tags">
+
+            <span>XML</span>
+
+            <span>XSD</span>
+
+            <span>XSLT</span>
+
+            <span>XPath</span>
+
+            <span>XQuery</span>
+
+            <span>JSON</span>
+
+            <span>JSON Schema</span>
+
+          </div>
+
+        </div>
+
+
+        <!-- CONNECTIVITY -->
+
+        <div class="skill-card">
+
+          <div class="skill-icon">
+            🔌
+          </div>
+
+          <h3>
+            Systems & Connectivity
+          </h3>
+
+          <div class="skill-tags">
+
+            <span>JDBC</span>
+
+            <span>TCP/IP</span>
+
+            <span>LAN/WAN</span>
+
+            <span>VLAN</span>
+
+            <span>Windows</span>
+
+            <span>Linux</span>
+
+          </div>
+
+        </div>
+
+
+        <!-- DEVELOPMENT -->
+
+        <div class="skill-card">
+
+          <div class="skill-icon">
+            💻
+          </div>
+
+          <h3>
+            Programming
+          </h3>
+
+          <div class="skill-tags">
+
+            <span>Python</span>
+
+            <span>Java</span>
+
+            <span>PHP</span>
+
+            <span>C</span>
+
+            <span>SQL</span>
+
+          </div>
+
+        </div>
+
+
+        <!-- TOOLS -->
+
+        <div class="skill-card">
+
+          <div class="skill-icon">
+            ⚙
+          </div>
+
+          <h3>
+            Tools & Delivery
+          </h3>
+
+          <div class="skill-tags">
+
+            <span>Postman</span>
+
+            <span>Git</span>
+
+            <span>GitLab</span>
+
+            <span>GitHub</span>
+
+            <span>Docker</span>
+
+            <span>Manual Testing</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       PROFESSIONAL EXPERIENCE
+  ======================================== -->
+
+  <section
+    class="experience"
+    id="experience"
+  >
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span>Career</span>
+
+        <h2>Professional Experience</h2>
+
+        <p>
+          Experience supporting backend applications,
+          production systems and international engineering teams.
+        </p>
+
+      </div>
+
+
+      <div class="timeline">
+
+
+        <!-- LIMERICK -->
+
+        <div class="timeline-item">
+
+          <div class="timeline-dot"></div>
+
+          <article class="timeline-card">
+
+            <div class="timeline-header">
+
+              <div>
+
+                <h3>
+                  Software Engineer
+                </h3>
+
+                <p class="company">
+                  Limerick Resources Ltd.
+                </p>
+
+              </div>
+
+              <div class="date">
+
+                Jan 2023 – Dec 2023
+                <br>
+                Dhaka, Bangladesh — Hybrid
+
+              </div>
+
+            </div>
+
+
+            <ul>
+
+              <li>
+                Worked with XML, XSD, XSLT, XPath,
+                XQuery, JSON and JSON Schema.
+              </li>
+
+              <li>
+                Configured and troubleshot JDBC-based
+                database connectivity for backend applications.
+              </li>
+
+              <li>
+                Investigated application and service issues
+                and followed technical problems through
+                resolution.
+              </li>
+
+              <li>
+                Performed manual testing after software
+                changes and validated application behaviour
+                and system stability.
+              </li>
+
+              <li>
+                Coordinated backend development, testing
+                and delivery across a team of more than
+                five engineers.
+              </li>
+
+              <li>
+                Helped improve development efficiency and
+                reduce delivery time by approximately 25%.
+              </li>
+
+            </ul>
+
+          </article>
+
+        </div>
+
+
+        <!-- NASSPROTECH -->
+
+        <div class="timeline-item">
+
+          <div class="timeline-dot"></div>
+
+          <article class="timeline-card">
+
+            <div class="timeline-header">
+
+              <div>
+
+                <h3>
+                  Software Engineer
+                </h3>
+
+                <p class="company">
+                  Nassprotech
+                </p>
+
+              </div>
+
+
+              <div class="date">
+
+                Mar 2022 – Dec 2022
+                <br>
+                United States — Remote
+
+              </div>
+
+            </div>
+
+
+            <ul>
+
+              <li>
+                Maintained backend applications and
+                SQL-based services used in daily business
+                operations.
+              </li>
+
+              <li>
+                Investigated production incidents with
+                international engineering colleagues.
+              </li>
+
+              <li>
+                Maintained SQL stored procedures,
+                data-processing services and reporting
+                solutions.
+              </li>
+
+              <li>
+                Worked with SQL and ETL-based
+                data-processing workflows.
+              </li>
+
+              <li>
+                Provided technical customer support by
+                email and remote desktop.
+              </li>
+
+              <li>
+                Tested application and service changes
+                after updates.
+              </li>
+
+            </ul>
+
+          </article>
+
+        </div>
+
+
+        <!-- JUNIOR -->
+
+        <div class="timeline-item">
+
+          <div class="timeline-dot"></div>
+
+          <article class="timeline-card">
+
+            <div class="timeline-header">
+
+              <div>
+
+                <h3>
+                  Junior Software Engineer
+                </h3>
+
+                <p class="company">
+                  Nassprotech
+                </p>
+
+              </div>
+
+              <div class="date">
+
+                Aug 2020 – Mar 2022
+                <br>
+                United States — Remote
+
+              </div>
+
+            </div>
+
+
+            <ul>
+
+              <li>
+                Supported backend applications and
+                production data services.
+              </li>
+
+              <li>
+                Diagnosed application, database and
+                operational issues.
+              </li>
+
+              <li>
+                Worked with SQL, ETL processes and
+                reporting systems.
+              </li>
+
+              <li>
+                Tested application and service changes
+                and supported production maintenance.
+              </li>
+
+              <li>
+                Collaborated remotely with international
+                colleagues and documented technical work.
+              </li>
+
+            </ul>
+
+          </article>
+
+        </div>
+
+
+        <!-- TEACHING ASSISTANT -->
+
+        <div class="timeline-item">
+
+          <div class="timeline-dot"></div>
+
+          <article class="timeline-card">
+
+            <div class="timeline-header">
+
+              <div>
+
+                <h3>
+                  Lab Teaching Assistant
+                </h3>
+
+                <p class="company">
+                  Daffodil International University
+                </p>
+
+              </div>
+
+              <div class="date">
+
+                Jan 2019 – Apr 2020
+                <br>
+                Dhaka, Bangladesh — On-site
+
+              </div>
+
+            </div>
+
+
+            <ul>
+
+              <li>
+                Provided technical support to students
+                experiencing software and programming
+                problems.
+              </li>
+
+              <li>
+                Helped students diagnose Object-Oriented
+                Programming issues.
+              </li>
+
+              <li>
+                Supported day-to-day operation of
+                laboratory computers.
+              </li>
+
+              <li>
+                Reviewed technical reports and provided
+                feedback on implementation and
+                documentation.
+              </li>
+
+            </ul>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       EDUCATION
+  ======================================== -->
+
+  <section id="education">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span>Academic Background</span>
+
+        <h2>Education</h2>
+
+      </div>
+
+
+      <div class="education-grid">
+
+
+        <article class="education-card">
+
+          <div class="year">
+            2024 – Present
+          </div>
+
+          <h3>
+            Master of Science in Computer Science
+          </h3>
+
+          <p>
+            University of Vienna
+          </p>
+
+          <p>
+            Vienna, Austria
+          </p>
+
+          <br>
+
+          <p>
+            Currently in the final semester.
+          </p>
+
+        </article>
+
+
+        <article class="education-card">
+
+          <div class="year">
+            2016 – 2020
+          </div>
+
+          <h3>
+            Bachelor of Science in Software Engineering
+          </h3>
+
+          <p>
+            Daffodil International University
+          </p>
+
+          <p>
+            Bangladesh
+          </p>
+
+          <br>
+
+          <p>
+            CGPA: 3.95 / 4.00
+          </p>
+
+          <p>
+            German equivalent: 1.1
+          </p>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       LANGUAGES
+  ======================================== -->
+
+  <section class="languages">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span>Communication</span>
+
+        <h2>Languages</h2>
+
+      </div>
+
+
+      <div class="language-grid">
+
+        <div class="language-card">
+
+          <h3>
+            English
+          </h3>
+
+          <p>
+            C1
+          </p>
+
+        </div>
+
+
+        <div class="language-card">
+
+          <h3>
+            German
+          </h3>
+
+          <p>
+            B1 → B2
+          </p>
+
+        </div>
+
+
+        <div class="language-card">
+
+          <h3>
+            Bengali
+          </h3>
+
+          <p>
+            Native
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       CONTACT
+  ======================================== -->
+
+  <section id="contact">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span>Get In Touch</span>
+
+        <h2>Let's Work Together</h2>
+
+        <p>
+          I'm open to Software Engineer,
+          Technical Support, Application Support and
+          Software Engineering opportunities.
+        </p>
+
+      </div>
+
+
+      <div class="contact-grid">
+
+
+        <div class="contact-info">
+
+          <h3>
+            Contact Information
+          </h3>
+
+          <p>
+            Feel free to contact me about professional
+            opportunities, technical roles or collaborations.
+          </p>
+
+
+          <div class="contact-row">
+
+            <small>Email</small>
+
+            <a
+              href="mailto:akram116223@gmail.com"
+            >
+              akram116223@gmail.com
+            </a>
+
+          </div>
+
+
+          <div class="contact-row">
+
+            <small>Phone</small>
+
+            <a
+              href="tel:+4368864058036"
+            >
+              +43 688 640 58036
+            </a>
+
+          </div>
+
+
+          <div class="contact-row">
+
+            <small>Location</small>
+
+            <span>
+              Vienna, Austria
+            </span>
+
+          </div>
+
+
+          <div class="contact-row">
+
+            <small>LinkedIn</small>
+
+            <a
+              href="https://linkedin.com/in/washim-akram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              linkedin.com/in/washim-akram
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!--
+          This demo form opens the visitor's email
+          application instead of requiring a backend.
+        -->
+
+        <form
+          class="contact-form"
+          id="contactForm"
+        >
+
+          <input
+            id="name"
+            type="text"
+            placeholder="Your name"
+            required
+          >
+
+          <input
+            id="email"
+            type="email"
+            placeholder="Your email"
+            required
+          >
+
+          <input
+            id="subject"
+            type="text"
+            placeholder="Subject"
+            required
+          >
+
+          <textarea
+            id="message"
+            placeholder="Write your message..."
+            required
+          ></textarea>
+
+
+          <button
+            type="submit"
+            class="btn btn-primary"
+          >
+            Send Message →
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================
+       FOOTER
+  ======================================== -->
+
+  <footer>
+
+    <p>
+      © <span id="year"></span>
+      Washim Akram.
+      Built with HTML, CSS & JavaScript.
+    </p>
+
+  </footer>
+
+
+  <!-- ========================================
+       JAVASCRIPT
+  ======================================== -->
+
+  <script>
+
+    /*
+     * Mobile Navigation
+     */
+
+    const menuBtn =
+      document.getElementById("menuBtn");
+
+    const navLinks =
+      document.getElementById("navLinks");
+
+
+    menuBtn.addEventListener(
+      "click",
+      () => {
+
+        navLinks.classList.toggle("active");
+
+      }
+    );
+
+
+    document
+      .querySelectorAll(".nav-links a")
+      .forEach(link => {
+
+        link.addEventListener(
+          "click",
+          () => {
+
+            navLinks.classList.remove("active");
+
+          }
+        );
+
+      });
+
+
+
+    /*
+     * Dark / Light Mode
+     */
+
+    const themeBtn =
+      document.getElementById("themeBtn");
+
+
+    themeBtn.addEventListener(
+      "click",
+      () => {
+
+        document.body.classList.toggle("light");
+
+
+        if (
+          document.body.classList.contains("light")
+        ) {
+
+          themeBtn.textContent = "☾";
+
+        } else {
+
+          themeBtn.textContent = "☀";
+
+        }
+
+      }
+    );
+
+
+
+    /*
+     * Contact Form
+     *
+     * Opens visitor's email client.
+     */
+
+    const contactForm =
+      document.getElementById("contactForm");
+
+
+    contactForm.addEventListener(
+      "submit",
+      function(event) {
+
+        event.preventDefault();
+
+
+        const name =
+          document.getElementById("name").value;
+
+        const email =
+          document.getElementById("email").value;
+
+        const subject =
+          document.getElementById("subject").value;
+
+        const message =
+          document.getElementById("message").value;
+
+
+        const body =
+`Hello Washim,
+
+${message}
+
+Regards,
+${name}
+
+Email: ${email}`;
+
+
+        const mailtoLink =
+          "mailto:akram116223@gmail.com" +
+          "?subject=" +
+          encodeURIComponent(subject) +
+          "&body=" +
+          encodeURIComponent(body);
+
+
+        window.location.href = mailtoLink;
+
+      }
+    );
+
+
+
+    /*
+     * Current Year
+     */
+
+    document.getElementById("year")
+      .textContent =
+      new Date().getFullYear();
+
+  </script>
+
+</body>
+</html>
