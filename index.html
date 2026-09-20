@@ -2,2300 +2,292 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta
-    name="description"
-    content="Washim Akram - Software Engineer and Software Engineer based in Vienna, Austria. Experienced in SQL, XML, JSON, JDBC, troubleshooting, testing and backend systems."
-  >
-
+  <meta name="description" content="Portfolio of Washim Akram, a software engineer in Vienna working across backend systems, program analysis, production software, and data integration.">
+  <meta name="theme-color" content="#f4f0e8">
+  <meta property="og:title" content="Washim Akram | Software Engineer">
+  <meta property="og:description" content="Backend engineering, program analysis, production systems, and data integration.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="washim-akram.jpg">
   <title>Washim Akram | Software Engineer</title>
 
-  <style>
-    /* ========================================
-       GLOBAL
-    ======================================== */
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --bg: #08111f;
-      --bg-secondary: #0d1728;
-      --card: #111d31;
-      --card-hover: #16253d;
-
-      --text: #eef4ff;
-      --text-secondary: #9eabc0;
-
-      --primary: #48b7ff;
-      --primary-dark: #159be8;
-      --accent: #7c6cff;
-
-      --border: rgba(255, 255, 255, 0.08);
-
-      --shadow:
-        0 20px 60px rgba(0, 0, 0, 0.3);
-    }
-
-    body.light {
-      --bg: #f7f9fc;
-      --bg-secondary: #eef2f7;
-      --card: #ffffff;
-      --card-hover: #f6f9ff;
-
-      --text: #101827;
-      --text-secondary: #64748b;
-
-      --border: #dfe6ef;
-
-      --shadow:
-        0 20px 50px rgba(30, 50, 80, 0.08);
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family:
-        Inter,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
-
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-
-      transition:
-        background 0.3s ease,
-        color 0.3s ease;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    ul {
-      list-style: none;
-    }
-
-    button,
-    input,
-    textarea {
-      font: inherit;
-    }
-
-    section {
-      padding: 110px 8%;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1180px;
-      margin: auto;
-    }
-
-    .section-heading {
-      text-align: center;
-      margin-bottom: 55px;
-    }
-
-    .section-heading span {
-      color: var(--primary);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 0.8rem;
-      font-weight: 700;
-    }
-
-    .section-heading h2 {
-      margin-top: 8px;
-      font-size: clamp(2rem, 5vw, 3rem);
-    }
-
-    .section-heading p {
-      max-width: 650px;
-      margin: 12px auto 0;
-      color: var(--text-secondary);
-    }
-
-
-    /* ========================================
-       NAVIGATION
-    ======================================== */
-
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-
-      background: rgba(8, 17, 31, 0.85);
-      backdrop-filter: blur(16px);
-
-      border-bottom: 1px solid var(--border);
-    }
-
-    body.light header {
-      background: rgba(255, 255, 255, 0.85);
-    }
-
-    nav {
-      max-width: 1180px;
-      margin: auto;
-
-      min-height: 76px;
-      padding: 0 24px;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-weight: 800;
-      font-size: 1.4rem;
-    }
-
-    .logo span {
-      color: var(--primary);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-    }
-
-    .nav-links a {
-      font-size: 0.95rem;
-      color: var(--text-secondary);
-      transition: 0.25s;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-
-    .theme-btn,
-    .menu-btn {
-      border: 1px solid var(--border);
-      background: var(--card);
-      color: var(--text);
-
-      width: 42px;
-      height: 42px;
-
-      display: grid;
-      place-items: center;
-
-      border-radius: 10px;
-      cursor: pointer;
-    }
-
-    .menu-btn {
-      display: none;
-    }
-
-
-    /* ========================================
-       HERO
-    ======================================== */
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-
-      padding-top: 130px;
-
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-
-      width: 500px;
-      height: 500px;
-
-      position: absolute;
-      top: 100px;
-      right: -150px;
-
-      background: var(--primary);
-      opacity: 0.08;
-
-      border-radius: 50%;
-      filter: blur(40px);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
-
-      gap: 70px;
-      align-items: center;
-
-      position: relative;
-      z-index: 2;
-    }
-
-    .availability {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-
-      padding: 8px 14px;
-
-      border: 1px solid var(--border);
-      border-radius: 100px;
-
-      color: var(--text-secondary);
-      background: var(--card);
-
-      margin-bottom: 25px;
-      font-size: 0.9rem;
-    }
-
-    .availability-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: #3dcc75;
-
-      box-shadow:
-        0 0 0 4px rgba(61, 204, 117, 0.12);
-    }
-
-    .hero h1 {
-      font-size: clamp(3.2rem, 8vw, 6rem);
-      line-height: 0.98;
-      letter-spacing: -3px;
-    }
-
-    .hero h1 span {
-      color: var(--primary);
-    }
-
-    .hero h2 {
-      margin-top: 22px;
-      font-size: clamp(1.3rem, 3vw, 2rem);
-      color: var(--text-secondary);
-      font-weight: 500;
-    }
-
-    .hero-description {
-      max-width: 720px;
-      color: var(--text-secondary);
-
-      font-size: 1.06rem;
-      margin: 24px 0 32px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-
-      min-height: 49px;
-      padding: 0 22px;
-
-      border-radius: 10px;
-
-      font-weight: 700;
-
-      transition:
-        transform 0.25s,
-        background 0.25s,
-        border-color 0.25s;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: #06111e;
-    }
-
-    .btn-primary:hover {
-      background: var(--primary-dark);
-    }
-
-    .btn-secondary {
-      border: 1px solid var(--border);
-      background: var(--card);
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--primary);
-    }
-
-    .hero-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 22px;
-
-      margin-top: 32px;
-
-      color: var(--text-secondary);
-      font-size: 0.93rem;
-    }
-
-    .hero-links a:hover {
-      color: var(--primary);
-    }
-
-
-    /* HERO TERMINAL */
-
-    .hero-right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 25px;
-}
-
-.profile-photo {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  padding: 5px;
-
-  background: linear-gradient(
-    135deg,
-    var(--primary),
-    var(--accent)
-  );
-
-  box-shadow:
-    0 15px 45px rgba(72, 183, 255, 0.18);
-}
-
-.profile-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-
-  border-radius: 50%;
-
-  border: 4px solid var(--bg);
-}
-
-    .terminal {
-      background: #050a12;
-
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 18px;
-
-      box-shadow: var(--shadow);
-
-      overflow: hidden;
-    }
-
-    .terminal-header {
-      padding: 14px 18px;
-
-      display: flex;
-      gap: 7px;
-
-      border-bottom:
-        1px solid rgba(255, 255, 255, 0.07);
-    }
-
-    .terminal-dot {
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
-    }
-
-    .terminal-dot:nth-child(1) {
-      background: #ff5f57;
-    }
-
-    .terminal-dot:nth-child(2) {
-      background: #febc2e;
-    }
-
-    .terminal-dot:nth-child(3) {
-      background: #28c840;
-    }
-
-    .terminal-body {
-      padding: 27px;
-
-      min-height: 330px;
-
-      font-family:
-        "Courier New",
-        monospace;
-
-      font-size: 0.9rem;
-      line-height: 1.9;
-      color: #b9c4d4;
-    }
-
-    .terminal-blue {
-      color: #53c1ff;
-    }
-
-    .terminal-green {
-      color: #61d894;
-    }
-
-    .terminal-purple {
-      color: #ab91ff;
-    }
-
-
-    /* ========================================
-       ABOUT
-    ======================================== */
-
-    .about {
-      background: var(--bg-secondary);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 55px;
-      align-items: start;
-    }
-
-    .about-text p {
-      color: var(--text-secondary);
-      margin-bottom: 17px;
-    }
-
-    .about-text strong {
-      color: var(--text);
-    }
-
-    .quick-info {
-      display: grid;
-      gap: 15px;
-    }
-
-    .quick-info-card {
-      padding: 21px;
-
-      border: 1px solid var(--border);
-      border-radius: 13px;
-
-      background: var(--card);
-    }
-
-    .quick-info-card small {
-      display: block;
-      color: var(--text-secondary);
-      margin-bottom: 5px;
-    }
-
-    .quick-info-card strong {
-      font-size: 1rem;
-    }
-
-
-    /* ========================================
-       SKILLS
-    ======================================== */
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .skill-card {
-      padding: 27px;
-
-      background: var(--card);
-
-      border: 1px solid var(--border);
-      border-radius: 15px;
-
-      transition:
-        transform 0.25s,
-        border-color 0.25s,
-        background 0.25s;
-    }
-
-    .skill-card:hover {
-      transform: translateY(-7px);
-      border-color: var(--primary);
-      background: var(--card-hover);
-    }
-
-    .skill-icon {
-      font-size: 2rem;
-      margin-bottom: 15px;
-    }
-
-    .skill-card h3 {
-      margin-bottom: 12px;
-      font-size: 1.1rem;
-    }
-
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .skill-tags span {
-      padding: 5px 10px;
-
-      background:
-        rgba(72, 183, 255, 0.08);
-
-      border:
-        1px solid rgba(72, 183, 255, 0.15);
-
-      border-radius: 7px;
-
-      color: var(--text-secondary);
-      font-size: 0.8rem;
-    }
-
-
-    /* ========================================
-       EXPERIENCE
-    ======================================== */
-
-    .experience {
-      background: var(--bg-secondary);
-    }
-
-    .timeline {
-      max-width: 850px;
-      margin: auto;
-      position: relative;
-    }
-
-    .timeline::before {
-      content: "";
-
-      position: absolute;
-      left: 10px;
-      top: 12px;
-      bottom: 10px;
-
-      width: 2px;
-      background: var(--border);
-    }
-
-    .timeline-item {
-      position: relative;
-
-      padding-left: 45px;
-      padding-bottom: 40px;
-    }
-
-    .timeline-item:last-child {
-      padding-bottom: 0;
-    }
-
-    .timeline-dot {
-      position: absolute;
-
-      left: 3px;
-      top: 8px;
-
-      width: 16px;
-      height: 16px;
-
-      border-radius: 50%;
-
-      background: var(--primary);
-
-      border: 4px solid var(--bg-secondary);
-    }
-
-    .timeline-card {
-      background: var(--card);
-
-      border: 1px solid var(--border);
-      border-radius: 16px;
-
-      padding: 28px;
-
-      transition: border-color 0.25s;
-    }
-
-    .timeline-card:hover {
-      border-color: var(--primary);
-    }
-
-    .timeline-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-
-      margin-bottom: 13px;
-    }
-
-    .timeline-header h3 {
-      font-size: 1.25rem;
-    }
-
-    .company {
-      color: var(--primary);
-      margin-top: 2px;
-    }
-
-    .date {
-      color: var(--text-secondary);
-      font-size: 0.88rem;
-    }
-
-    .timeline-card ul {
-      list-style: disc;
-      padding-left: 20px;
-      color: var(--text-secondary);
-    }
-
-    .timeline-card li {
-      margin-bottom: 8px;
-    }
-
-
-    /* ========================================
-       EDUCATION
-    ======================================== */
-
-    .education-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 22px;
-    }
-
-    .education-card {
-      background: var(--card);
-
-      border: 1px solid var(--border);
-      border-radius: 16px;
-
-      padding: 30px;
-    }
-
-    .education-card .year {
-      color: var(--primary);
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .education-card h3 {
-      margin-bottom: 7px;
-    }
-
-    .education-card p {
-      color: var(--text-secondary);
-    }
-
-
-    /* ========================================
-       LANGUAGES
-    ======================================== */
-
-    .languages {
-      background: var(--bg-secondary);
-    }
-
-    .language-grid {
-      max-width: 850px;
-      margin: auto;
-
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .language-card {
-      padding: 28px;
-      text-align: center;
-
-      background: var(--card);
-
-      border: 1px solid var(--border);
-      border-radius: 15px;
-    }
-
-    .language-card h3 {
-      margin-bottom: 5px;
-    }
-
-    .language-card p {
-      color: var(--primary);
-      font-weight: 700;
-    }
-
-
-    /* ========================================
-       CONTACT
-    ======================================== */
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 45px;
-    }
-
-    .contact-info h3 {
-      font-size: 1.7rem;
-      margin-bottom: 15px;
-    }
-
-    .contact-info > p {
-      color: var(--text-secondary);
-      margin-bottom: 30px;
-    }
-
-    .contact-row {
-      margin-bottom: 18px;
-    }
-
-    .contact-row small {
-      display: block;
-      color: var(--text-secondary);
-    }
-
-    .contact-row a:hover {
-      color: var(--primary);
-    }
-
-    .contact-form {
-      display: grid;
-      gap: 15px;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-
-      border: 1px solid var(--border);
-
-      background: var(--card);
-      color: var(--text);
-
-      padding: 15px 16px;
-
-      border-radius: 10px;
-      outline: none;
-
-      transition: border-color 0.25s;
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      border-color: var(--primary);
-    }
-
-    .contact-form textarea {
-      min-height: 160px;
-      resize: vertical;
-    }
-
-    .contact-form button {
-      border: 0;
-      cursor: pointer;
-    }
-
-
-    /* ========================================
-       FOOTER
-    ======================================== */
-
-    footer {
-      border-top: 1px solid var(--border);
-
-      padding: 32px 8%;
-
-      color: var(--text-secondary);
-      text-align: center;
-
-      font-size: 0.9rem;
-    }
-
-
-    /* ========================================
-       RESPONSIVE
-    ======================================== */
-
-    @media (max-width: 950px) {
-
-      .hero-grid,
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .terminal {
-        max-width: 650px;
-      }
-
-      .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-    }
-
-
-    @media (max-width: 700px) {
-
-      section {
-        padding: 85px 6%;
-      }
-
-      .menu-btn {
-        display: grid;
-      }
-
-      .nav-links {
-        display: none;
-
-        position: absolute;
-        left: 0;
-        top: 76px;
-
-        width: 100%;
-
-        padding: 25px;
-
-        background: var(--bg);
-
-        border-bottom:
-          1px solid var(--border);
-
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .nav-links li {
-        text-align: center;
-      }
-
-      .theme-btn {
-        margin: auto;
-      }
-
-      .hero {
-        text-align: center;
-      }
-
-      .hero-grid {
-        gap: 45px;
-      }
-
-      .hero-description {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-buttons,
-      .hero-links {
-        justify-content: center;
-      }
-
-      .hero h1 {
-        letter-spacing: -2px;
-      }
-
-      .skills-grid,
-      .education-grid,
-      .language-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .timeline-header {
-        display: block;
-      }
-
-      .date {
-        margin-top: 8px;
-      }
-
-    }
-
-  </style>
-</head>
-
-
-<body>
-
-  <!-- ========================================
-       NAVIGATION
-  ======================================== -->
-
-  <header>
-
-    <nav>
-
-      <a href="#home" class="logo">
-        Washim<span>.</span>
-      </a>
-
-
-      <ul class="nav-links" id="navLinks">
-
-        <li>
-          <a href="#about">About</a>
-        </li>
-
-        <li>
-          <a href="#skills">Skills</a>
-        </li>
-
-        <li>
-          <a href="#experience">Experience</a>
-        </li>
-
-        <li>
-          <a href="#education">Education</a>
-        </li>
-
-        <li>
-          <a href="#contact">Contact</a>
-        </li>
-
-        <li>
-          <button
-            class="theme-btn"
-            id="themeBtn"
-            aria-label="Toggle theme"
-          >
-            ☀
-          </button>
-        </li>
-
-      </ul>
-
-
-      <button
-        class="menu-btn"
-        id="menuBtn"
-        aria-label="Open navigation"
-      >
-        ☰
-      </button>
-
-    </nav>
-
-  </header>
-
-
-  <!-- ========================================
-       HERO
-  ======================================== -->
-
-  <section class="hero" id="home">
-
-    <div class="container hero-grid">
-
-      <div>
-
-        <div class="availability">
-
-          <div class="availability-dot"></div>
-
-          Available for full-time opportunities
-
-        </div>
-
-
-        <h1>
-          Washim
-          <span>Akram.</span>
-        </h1>
-
-
-        <h2>
-          Software Engineer
-        </h2>
-
-
-        <p class="hero-description">
-
-          Software engineer based in Vienna with experience
-          supporting production applications, investigating
-          technical incidents, maintaining SQL-based services,
-          testing software changes and troubleshooting complex
-          application and database issues.
-
-        </p>
-
-
-        <div class="hero-buttons">
-
-          <a
-            href="#experience"
-            class="btn btn-primary"
-          >
-            View Experience
-          </a>
-
-
-          <a
-            href="Washim_Akram_Altova_Software_Support_Engineer_CV.pdf"
-            class="btn btn-secondary"
-            download
-          >
-            ↓ Download CV
-          </a>
-
-        </div>
-
-
-        <div class="hero-links">
-
-          <a
-            href="mailto:akram116223@gmail.com"
-          >
-            ✉ Email
-          </a>
-
-
-          <a
-            href="https://linkedin.com/in/washim-akram"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            ↗ LinkedIn
-          </a>
-
-
-          <span>
-            📍 Vienna, Austria
-          </span>
-
-        </div>
-
-      </div>
-
-
-      <!-- TERMINAL / DEVELOPER CARD -->
-
-    <div class="hero-right">
-
-        <div class="profile-photo">
-            <img
-            src="washim-akram.jpg"
-            alt="Washim Akram - Software Engineer"
-            >
-        </div>
-
-        <div class="terminal">
-
-        <div class="terminal-header">
-
-          <span class="terminal-dot"></span>
-          <span class="terminal-dot"></span>
-          <span class="terminal-dot"></span>
-
-        </div>
-
-
-        <div class="terminal-body">
-
-          <div>
-            <span class="terminal-blue">
-              washim@portfolio
-            </span>
-            :~$ whoami
-          </div>
-
-          <div class="terminal-green">
-            Software Engineer
-          </div>
-
-          <br>
-
-
-          <div>
-            <span class="terminal-blue">
-              washim@portfolio
-            </span>
-            :~$ skills --core
-          </div>
-
-          <div>
-            SQL • XML • XSD • JSON
-          </div>
-
-          <div>
-            JDBC • ETL • Troubleshooting
-          </div>
-
-          <div>
-            Linux • Windows • Docker
-          </div>
-
-          <br>
-
-
-          <div>
-            <span class="terminal-blue">
-              washim@portfolio
-            </span>
-            :~$ education
-          </div>
-
-          <div class="terminal-purple">
-            MSc Computer Science
-          </div>
-
-          <div>
-            University of Vienna
-          </div>
-
-          <br>
-
-
-          <div>
-            <span class="terminal-green">
-              ✓ Ready for the next challenge.
-            </span>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ========================================
-       ABOUT
-  ======================================== -->
-
-  <section class="about" id="about">
-
-    <div class="container">
-
-      <div class="section-heading">
-
-        <span>About</span>
-
-        <h2>About Me</h2>
-
-        <p>
-          Software engineering, technical support and
-          production-system experience.
-        </p>
-
-      </div>
-
-
-      <div class="about-grid">
-
-        <div class="about-text">
-
-          <p>
-            I'm <strong>Washim Akram</strong>, a Software
-            Engineer and Software Engineer currently
-            based in Vienna, Austria.
-          </p>
-
-
-          <p>
-            My professional experience includes supporting
-            production applications, troubleshooting application
-            and database problems, investigating incidents,
-            validating software changes and maintaining
-            SQL-based data services.
-          </p>
-
-
-          <p>
-            I have hands-on experience with
-            <strong>
-              SQL, Microsoft SQL Server, MySQL, MongoDB,
-              XML, XSD, XSLT, XPath, XQuery, JSON,
-              JSON Schema, JDBC and ETL workflows.
-            </strong>
-          </p>
-
-
-          <p>
-            I enjoy analysing technical problems,
-            identifying their underlying causes and communicating
-            solutions clearly to users and engineering teams.
-          </p>
-
-
-          <p>
-            I'm currently completing my
-            <strong>
-              Master's degree in Computer Science at the
-              University of Vienna
-            </strong>
-            and am available for full-time employment.
-          </p>
-
-        </div>
-
-
-        <div class="quick-info">
-
-          <div class="quick-info-card">
-
-            <small>Current Location</small>
-
-            <strong>
-              Vienna, Austria
-            </strong>
-
-          </div>
-
-
-          <div class="quick-info-card">
-
-            <small>Primary Focus</small>
-
-            <strong>
-              Software Support & Troubleshooting
-            </strong>
-
-          </div>
-
-
-          <div class="quick-info-card">
-
-            <small>Education</small>
-
-            <strong>
-              MSc Computer Science
-            </strong>
-
-          </div>
-
-
-          <div class="quick-info-card">
-
-            <small>Work Authorization</small>
-
-            <strong>
-              Eligible to work in Austria
-            </strong>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ========================================
-       SKILLS
-  ======================================== -->
-
-  <section id="skills">
-
-    <div class="container">
-
-      <div class="section-heading">
-
-        <span>Expertise</span>
-
-        <h2>Technical Skills</h2>
-
-        <p>
-          Technologies and tools I have worked with across
-          production systems, databases and application support.
-        </p>
-
-      </div>
-
-
-      <div class="skills-grid">
-
-
-        <!-- SUPPORT -->
-
-        <div class="skill-card">
-
-          <div class="skill-icon">
-            🛠
-          </div>
-
-          <h3>
-            Support & Troubleshooting
-          </h3>
-
-          <div class="skill-tags">
-
-            <span>Incident Analysis</span>
-
-            <span>Application Support</span>
-
-            <span>Remote Support</span>
-
-            <span>Database Diagnosis</span>
-
-            <span>Service Requests</span>
-
-            <span>Change Validation</span>
-
-          </div>
-
-        </div>
-
-
-        <!-- DATABASE -->
-
-        <div class="skill-card">
-
-          <div class="skill-icon">
-            🗄
-          </div>
-
-          <h3>
-            Databases
-          </h3>
-
-          <div class="skill-tags">
-
-            <span>SQL</span>
-
-            <span>Microsoft SQL Server</span>
-
-            <span>MySQL</span>
-
-            <span>MongoDB</span>
-
-            <span>Stored Procedures</span>
-
-            <span>ETL</span>
-
-          </div>
-
-        </div>
-
-
-        <!-- XML -->
-
-        <div class="skill-card">
-
-          <div class="skill-icon">
-            &lt;/&gt;
-          </div>
-
-          <h3>
-            XML & Data Technologies
-          </h3>
-
-          <div class="skill-tags">
-
-            <span>XML</span>
-
-            <span>XSD</span>
-
-            <span>XSLT</span>
-
-            <span>XPath</span>
-
-            <span>XQuery</span>
-
-            <span>JSON</span>
-
-            <span>JSON Schema</span>
-
-          </div>
-
-        </div>
-
-
-        <!-- CONNECTIVITY -->
-
-        <div class="skill-card">
-
-          <div class="skill-icon">
-            🔌
-          </div>
-
-          <h3>
-            Systems & Connectivity
-          </h3>
-
-          <div class="skill-tags">
-
-            <span>JDBC</span>
-
-            <span>TCP/IP</span>
-
-            <span>LAN/WAN</span>
-
-            <span>VLAN</span>
-
-            <span>Windows</span>
-
-            <span>Linux</span>
-
-          </div>
-
-        </div>
-
-
-        <!-- DEVELOPMENT -->
-
-        <div class="skill-card">
-
-          <div class="skill-icon">
-            💻
-          </div>
-
-          <h3>
-            Programming
-          </h3>
-
-          <div class="skill-tags">
-
-            <span>Python</span>
-
-            <span>Java</span>
-
-            <span>PHP</span>
-
-            <span>C</span>
-
-            <span>SQL</span>
-
-          </div>
-
-        </div>
-
-
-        <!-- TOOLS -->
-
-        <div class="skill-card">
-
-          <div class="skill-icon">
-            ⚙
-          </div>
-
-          <h3>
-            Tools & Delivery
-          </h3>
-
-          <div class="skill-tags">
-
-            <span>Postman</span>
-
-            <span>Git</span>
-
-            <span>GitLab</span>
-
-            <span>GitHub</span>
-
-            <span>Docker</span>
-
-            <span>Manual Testing</span>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ========================================
-       PROFESSIONAL EXPERIENCE
-  ======================================== -->
-
-  <section
-    class="experience"
-    id="experience"
-  >
-
-    <div class="container">
-
-      <div class="section-heading">
-
-        <span>Career</span>
-
-        <h2>Professional Experience</h2>
-
-        <p>
-          Experience supporting backend applications,
-          production systems and international engineering teams.
-        </p>
-
-      </div>
-
-
-      <div class="timeline">
-
-
-        <!-- LIMERICK -->
-
-        <div class="timeline-item">
-
-          <div class="timeline-dot"></div>
-
-          <article class="timeline-card">
-
-            <div class="timeline-header">
-
-              <div>
-
-                <h3>
-                  Software Engineer
-                </h3>
-
-                <p class="company">
-                  Limerick Resources Ltd.
-                </p>
-
-              </div>
-
-              <div class="date">
-
-                Jan 2023 – Dec 2023
-                <br>
-                Dhaka, Bangladesh — Hybrid
-
-              </div>
-
-            </div>
-
-
-            <ul>
-
-              <li>
-                Worked with XML, XSD, XSLT, XPath,
-                XQuery, JSON and JSON Schema.
-              </li>
-
-              <li>
-                Configured and troubleshot JDBC-based
-                database connectivity for backend applications.
-              </li>
-
-              <li>
-                Investigated application and service issues
-                and followed technical problems through
-                resolution.
-              </li>
-
-              <li>
-                Performed manual testing after software
-                changes and validated application behaviour
-                and system stability.
-              </li>
-
-              <li>
-                Coordinated backend development, testing
-                and delivery across a team of more than
-                five engineers.
-              </li>
-
-              <li>
-                Helped improve development efficiency and
-                reduce delivery time by approximately 25%.
-              </li>
-
-            </ul>
-
-          </article>
-
-        </div>
-
-
-        <!-- NASSPROTECH -->
-
-        <div class="timeline-item">
-
-          <div class="timeline-dot"></div>
-
-          <article class="timeline-card">
-
-            <div class="timeline-header">
-
-              <div>
-
-                <h3>
-                  Software Engineer
-                </h3>
-
-                <p class="company">
-                  Nassprotech
-                </p>
-
-              </div>
-
-
-              <div class="date">
-
-                Mar 2022 – Dec 2022
-                <br>
-                United States — Remote
-
-              </div>
-
-            </div>
-
-
-            <ul>
-
-              <li>
-                Maintained backend applications and
-                SQL-based services used in daily business
-                operations.
-              </li>
-
-              <li>
-                Investigated production incidents with
-                international engineering colleagues.
-              </li>
-
-              <li>
-                Maintained SQL stored procedures,
-                data-processing services and reporting
-                solutions.
-              </li>
-
-              <li>
-                Worked with SQL and ETL-based
-                data-processing workflows.
-              </li>
-
-              <li>
-                Provided technical customer support by
-                email and remote desktop.
-              </li>
-
-              <li>
-                Tested application and service changes
-                after updates.
-              </li>
-
-            </ul>
-
-          </article>
-
-        </div>
-
-
-        <!-- JUNIOR -->
-
-        <div class="timeline-item">
-
-          <div class="timeline-dot"></div>
-
-          <article class="timeline-card">
-
-            <div class="timeline-header">
-
-              <div>
-
-                <h3>
-                  Junior Software Engineer
-                </h3>
-
-                <p class="company">
-                  Nassprotech
-                </p>
-
-              </div>
-
-              <div class="date">
-
-                Aug 2020 – Mar 2022
-                <br>
-                United States — Remote
-
-              </div>
-
-            </div>
-
-
-            <ul>
-
-              <li>
-                Supported backend applications and
-                production data services.
-              </li>
-
-              <li>
-                Diagnosed application, database and
-                operational issues.
-              </li>
-
-              <li>
-                Worked with SQL, ETL processes and
-                reporting systems.
-              </li>
-
-              <li>
-                Tested application and service changes
-                and supported production maintenance.
-              </li>
-
-              <li>
-                Collaborated remotely with international
-                colleagues and documented technical work.
-              </li>
-
-            </ul>
-
-          </article>
-
-        </div>
-
-
-        <!-- TEACHING ASSISTANT -->
-
-        <div class="timeline-item">
-
-          <div class="timeline-dot"></div>
-
-          <article class="timeline-card">
-
-            <div class="timeline-header">
-
-              <div>
-
-                <h3>
-                  Lab Teaching Assistant
-                </h3>
-
-                <p class="company">
-                  Daffodil International University
-                </p>
-
-              </div>
-
-              <div class="date">
-
-                Jan 2019 – Apr 2020
-                <br>
-                Dhaka, Bangladesh — On-site
-
-              </div>
-
-            </div>
-
-
-            <ul>
-
-              <li>
-                Provided technical support to students
-                experiencing software and programming
-                problems.
-              </li>
-
-              <li>
-                Helped students diagnose Object-Oriented
-                Programming issues.
-              </li>
-
-              <li>
-                Supported day-to-day operation of
-                laboratory computers.
-              </li>
-
-              <li>
-                Reviewed technical reports and provided
-                feedback on implementation and
-                documentation.
-              </li>
-
-            </ul>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ========================================
-       EDUCATION
-  ======================================== -->
-
-  <section id="education">
-
-    <div class="container">
-
-      <div class="section-heading">
-
-        <span>Academic Background</span>
-
-        <h2>Education</h2>
-
-      </div>
-
-
-      <div class="education-grid">
-
-
-        <article class="education-card">
-
-          <div class="year">
-            2024 – Present
-          </div>
-
-          <h3>
-            Master of Science in Computer Science
-          </h3>
-
-          <p>
-            University of Vienna
-          </p>
-
-          <p>
-            Vienna, Austria
-          </p>
-
-          <br>
-
-          <p>
-            Currently in the final semester.
-          </p>
-
-        </article>
-
-
-        <article class="education-card">
-
-          <div class="year">
-            2016 – 2020
-          </div>
-
-          <h3>
-            Bachelor of Science in Software Engineering
-          </h3>
-
-          <p>
-            Daffodil International University
-          </p>
-
-          <p>
-            Bangladesh
-          </p>
-
-          <br>
-
-          <p>
-            CGPA: 3.95 / 4.00
-          </p>
-
-          <p>
-            German equivalent: 1.1
-          </p>
-
-        </article>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ========================================
-       LANGUAGES
-  ======================================== -->
-
-  <section class="languages">
-
-    <div class="container">
-
-      <div class="section-heading">
-
-        <span>Communication</span>
-
-        <h2>Languages</h2>
-
-      </div>
-
-
-      <div class="language-grid">
-
-        <div class="language-card">
-
-          <h3>
-            English
-          </h3>
-
-          <p>
-            C1
-          </p>
-
-        </div>
-
-
-        <div class="language-card">
-
-          <h3>
-            German
-          </h3>
-
-          <p>
-            B1 → B2
-          </p>
-
-        </div>
-
-
-        <div class="language-card">
-
-          <h3>
-            Bengali
-          </h3>
-
-          <p>
-            Native
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ========================================
-       CONTACT
-  ======================================== -->
-
-  <section id="contact">
-
-    <div class="container">
-
-      <div class="section-heading">
-
-        <span>Get In Touch</span>
-
-        <h2>Let's Work Together</h2>
-
-        <p>
-          I'm open to Software Engineer,
-          Technical Support, Application Support and
-          Software Engineering opportunities.
-        </p>
-
-      </div>
-
-
-      <div class="contact-grid">
-
-
-        <div class="contact-info">
-
-          <h3>
-            Contact Information
-          </h3>
-
-          <p>
-            Feel free to contact me about professional
-            opportunities, technical roles or collaborations.
-          </p>
-
-
-          <div class="contact-row">
-
-            <small>Email</small>
-
-            <a
-              href="mailto:akram116223@gmail.com"
-            >
-              akram116223@gmail.com
-            </a>
-
-          </div>
-
-
-          <div class="contact-row">
-
-            <small>Phone</small>
-
-            <a
-              href="tel:+4368864058036"
-            >
-              +43 688 640 58036
-            </a>
-
-          </div>
-
-
-          <div class="contact-row">
-
-            <small>Location</small>
-
-            <span>
-              Vienna, Austria
-            </span>
-
-          </div>
-
-
-          <div class="contact-row">
-
-            <small>LinkedIn</small>
-
-            <a
-              href="https://linkedin.com/in/washim-akram"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              linkedin.com/in/washim-akram
-            </a>
-
-          </div>
-
-        </div>
-
-
-        <!--
-          This demo form opens the visitor's email
-          application instead of requiring a backend.
-        -->
-
-        <form
-          class="contact-form"
-          id="contactForm"
-        >
-
-          <input
-            id="name"
-            type="text"
-            placeholder="Your name"
-            required
-          >
-
-          <input
-            id="email"
-            type="email"
-            placeholder="Your email"
-            required
-          >
-
-          <input
-            id="subject"
-            type="text"
-            placeholder="Subject"
-            required
-          >
-
-          <textarea
-            id="message"
-            placeholder="Write your message..."
-            required
-          ></textarea>
-
-
-          <button
-            type="submit"
-            class="btn btn-primary"
-          >
-            Send Message →
-          </button>
-
-        </form>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ========================================
-       FOOTER
-  ======================================== -->
-
-  <footer>
-
-    <p>
-      © <span id="year"></span>
-      Washim Akram.
-      Built with HTML, CSS & JavaScript.
-    </p>
-
-  </footer>
-
-
-  <!-- ========================================
-       JAVASCRIPT
-  ======================================== -->
-
   <script>
-
-    /*
-     * Mobile Navigation
-     */
-
-    const menuBtn =
-      document.getElementById("menuBtn");
-
-    const navLinks =
-      document.getElementById("navLinks");
-
-
-    menuBtn.addEventListener(
-      "click",
-      () => {
-
-        navLinks.classList.toggle("active");
-
-      }
-    );
-
-
-    document
-      .querySelectorAll(".nav-links a")
-      .forEach(link => {
-
-        link.addEventListener(
-          "click",
-          () => {
-
-            navLinks.classList.remove("active");
-
-          }
-        );
-
-      });
-
-
-
-    /*
-     * Dark / Light Mode
-     */
-
-    const themeBtn =
-      document.getElementById("themeBtn");
-
-
-    themeBtn.addEventListener(
-      "click",
-      () => {
-
-        document.body.classList.toggle("light");
-
-
-        if (
-          document.body.classList.contains("light")
-        ) {
-
-          themeBtn.textContent = "☾";
-
-        } else {
-
-          themeBtn.textContent = "☀";
-
-        }
-
-      }
-    );
-
-
-
-    /*
-     * Contact Form
-     *
-     * Opens visitor's email client.
-     */
-
-    const contactForm =
-      document.getElementById("contactForm");
-
-
-    contactForm.addEventListener(
-      "submit",
-      function(event) {
-
-        event.preventDefault();
-
-
-        const name =
-          document.getElementById("name").value;
-
-        const email =
-          document.getElementById("email").value;
-
-        const subject =
-          document.getElementById("subject").value;
-
-        const message =
-          document.getElementById("message").value;
-
-
-        const body =
-`Hello Washim,
-
-${message}
-
-Regards,
-${name}
-
-Email: ${email}`;
-
-
-        const mailtoLink =
-          "mailto:akram116223@gmail.com" +
-          "?subject=" +
-          encodeURIComponent(subject) +
-          "&body=" +
-          encodeURIComponent(body);
-
-
-        window.location.href = mailtoLink;
-
-      }
-    );
-
-
-
-    /*
-     * Current Year
-     */
-
-    document.getElementById("year")
-      .textContent =
-      new Date().getFullYear();
-
+    document.documentElement.classList.add("js");
+    try {
+      if (localStorage.getItem("portfolio-theme") === "dark") document.documentElement.dataset.theme = "dark";
+    } catch (error) { /* The page still works when storage is unavailable. */ }
   </script>
 
+  <style>
+    :root {
+      --paper:#f4f0e8; --paper-soft:#ece7dc; --ink:#14231f; --muted:#5f6b65;
+      --card:rgba(255,253,248,.82); --solid-card:#fffdf8; --line:rgba(20,35,31,.14);
+      --accent:#d55d36; --accent-dark:#a83c1c; --green:#155e4b; --lime:#c9e265;
+      --shadow:0 24px 70px rgba(33,44,38,.11); --header:rgba(244,240,232,.88); --max:1180px;
+    }
+    html[data-theme="dark"] {
+      --paper:#101916; --paper-soft:#16221e; --ink:#f5f1e8; --muted:#aebbb4;
+      --card:rgba(24,36,32,.86); --solid-card:#182420; --line:rgba(245,241,232,.14);
+      --accent:#f17b52; --accent-dark:#ff9a73; --green:#95d9bd; --lime:#bdd953;
+      --shadow:0 24px 70px rgba(0,0,0,.28); --header:rgba(16,25,22,.88);
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:96px}
+    body{margin:0;overflow-x:hidden;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65;transition:background .18s,color .18s}
+    body::before{position:fixed;z-index:-2;inset:0;background-image:radial-gradient(rgba(20,35,31,.08) .7px,transparent .7px);background-size:22px 22px;content:"";pointer-events:none}
+    html[data-theme="dark"] body::before{background-image:radial-gradient(rgba(245,241,232,.08) .7px,transparent .7px)}
+    body::after{position:fixed;z-index:-1;top:-18rem;right:-14rem;width:44rem;height:44rem;border-radius:50%;background:rgba(201,226,101,.22);content:"";filter:blur(20px);pointer-events:none}
+    a{color:inherit;text-decoration:none} button,a{-webkit-tap-highlight-color:transparent} button{color:inherit;font:inherit} img{display:block;max-width:100%} svg{display:block}
+    ::selection{background:var(--lime);color:#14231f} :focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+    .skip-link{position:fixed;z-index:2000;top:10px;left:10px;padding:10px 16px;border-radius:999px;background:var(--ink);color:var(--paper);transform:translateY(-160%)} .skip-link:focus{transform:translateY(0)}
+    .container{width:min(calc(100% - 40px),var(--max));margin-inline:auto}.section{padding:110px 0}.section--tinted{border-block:1px solid var(--line);background:var(--paper-soft)}
+    .section-heading{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:48px;align-items:end;margin-bottom:54px}
+    .eyebrow{display:inline-flex;gap:10px;align-items:center;margin:0 0 14px;color:var(--accent-dark);font-size:.76rem;font-weight:800;letter-spacing:.16em;line-height:1.2;text-transform:uppercase}.eyebrow::before{width:24px;height:2px;background:currentColor;content:""}
+    .section-title{max-width:720px;margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(2.35rem,5vw,4.7rem);font-weight:500;letter-spacing:-.045em;line-height:.98}.section-intro{max-width:610px;margin:0;color:var(--muted);font-size:1.04rem}
+    .button{display:inline-flex;min-height:50px;padding:0 21px;border:1px solid transparent;border-radius:999px;gap:10px;align-items:center;justify-content:center;font-size:.93rem;font-weight:750;transition:transform .18s,background .18s,border-color .18s}.button:hover{transform:translateY(-2px)}.button--primary{background:var(--ink);color:var(--paper)}.button--secondary{border-color:var(--line);background:var(--card)}.button svg{width:18px;height:18px}
+
+    .site-header{position:fixed;z-index:1000;top:0;right:0;left:0;border-bottom:1px solid transparent;background:var(--header);backdrop-filter:blur(18px);transition:border-color .18s,box-shadow .18s}.site-header.is-scrolled{border-color:var(--line);box-shadow:0 8px 30px rgba(20,35,31,.06)}
+    .nav{display:flex;min-height:76px;align-items:center;justify-content:space-between}.logo{display:inline-flex;width:43px;height:43px;border-radius:50%;align-items:center;justify-content:center;background:var(--ink);color:var(--paper);font-family:Georgia,serif;font-weight:700;letter-spacing:-.06em}
+    .nav-panel{display:flex;gap:32px;align-items:center}.nav-links{display:flex;margin:0;padding:0;gap:28px;align-items:center;list-style:none}.nav-links a{position:relative;color:var(--muted);font-size:.89rem;font-weight:680}.nav-links a::after{position:absolute;right:0;bottom:-7px;left:0;height:2px;background:var(--accent);content:"";transform:scaleX(0);transition:transform .18s}.nav-links a:hover,.nav-links a[aria-current="true"]{color:var(--ink)}.nav-links a:hover::after,.nav-links a[aria-current="true"]::after{transform:scaleX(1)}
+    .nav-actions{display:flex;gap:9px}.icon-button{display:grid;width:42px;height:42px;padding:0;border:1px solid var(--line);border-radius:50%;place-items:center;background:transparent;cursor:pointer}.icon-button:hover{background:var(--solid-card)}.icon-button svg{width:19px;height:19px}.menu-button{display:none}.theme-moon{display:none}html[data-theme="dark"] .theme-sun{display:none}html[data-theme="dark"] .theme-moon{display:block}
+
+    .hero{display:flex;min-height:100vh;padding:138px 0 70px;align-items:center}.hero-grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(320px,.88fr);gap:clamp(60px,9vw,120px);align-items:center}
+    .status{display:inline-flex;margin-bottom:24px;padding:8px 13px;border:1px solid var(--line);border-radius:999px;gap:9px;align-items:center;background:var(--card);color:var(--muted);font-size:.78rem;font-weight:700}.status-dot{width:8px;height:8px;border-radius:50%;background:#2b9c6a;box-shadow:0 0 0 4px rgba(43,156,106,.14)}
+    .hero h1{max-width:770px;margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(3.7rem,8.2vw,7.6rem);font-weight:500;letter-spacing:-.068em;line-height:.88}.hero h1 em{color:var(--accent);font-weight:inherit}.hero-summary{max-width:700px;margin:30px 0 0;color:var(--muted);font-size:clamp(1.03rem,1.8vw,1.22rem);line-height:1.65}.hero-actions{display:flex;margin-top:35px;gap:12px;flex-wrap:wrap}
+    .hero-meta{display:flex;margin:38px 0 0;padding:0;gap:12px 25px;flex-wrap:wrap;color:var(--muted);font-size:.86rem;list-style:none}.hero-meta li{display:inline-flex;gap:8px;align-items:center}.hero-meta svg{width:16px;height:16px;color:var(--accent-dark)}
+    .portrait-wrap{position:relative;width:min(100%,430px);margin-left:auto}.portrait-frame{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:210px 210px 26px 26px;background:var(--green);box-shadow:var(--shadow);aspect-ratio:.82;transform:rotate(1.5deg)}.portrait-frame::before{position:absolute;z-index:1;right:10%;bottom:-3%;width:55%;height:40%;border-radius:50%;background:var(--lime);content:""}.portrait-frame img{position:relative;z-index:2;width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:saturate(.92) contrast(1.02)}
+    .portrait-label{position:absolute;z-index:3;right:-22px;bottom:54px;max-width:200px;padding:14px 17px;border:1px solid var(--line);border-radius:14px;background:var(--solid-card);box-shadow:var(--shadow);font-size:.78rem;font-weight:750;line-height:1.4;transform:rotate(-2.5deg)}.portrait-label span{display:block;margin-bottom:2px;color:var(--accent-dark);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase}.hero-note{position:absolute;z-index:3;top:45px;left:-40px;display:grid;width:104px;height:104px;border-radius:50%;place-items:center;background:var(--lime);color:#14231f;font-family:Georgia,serif;font-size:.9rem;font-weight:700;line-height:1.1;text-align:center;transform:rotate(-8deg)}
+    .stats{display:grid;margin-top:58px;border-block:1px solid var(--line);grid-template-columns:repeat(4,1fr)}.stat{padding:28px 25px;border-right:1px solid var(--line)}.stat:first-child{padding-left:0}.stat:last-child{border-right:0}.stat strong{display:block;margin-bottom:4px;font-family:Georgia,serif;font-size:clamp(1.55rem,3vw,2.45rem);font-weight:500;letter-spacing:-.04em;line-height:1}.stat span{color:var(--muted);font-size:.79rem;font-weight:650}
+
+    .about-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(300px,.92fr);gap:clamp(45px,8vw,105px);align-items:start}.about-copy{color:var(--muted);font-size:clamp(1.06rem,1.7vw,1.25rem)}.about-copy p{margin:0 0 22px}.about-copy strong{color:var(--ink)}.principles{display:grid;gap:12px}.principle{display:grid;padding:20px;border:1px solid var(--line);border-radius:18px;grid-template-columns:42px 1fr;gap:15px;background:var(--card)}.principle-number{display:grid;width:42px;height:42px;border-radius:50%;place-items:center;background:var(--ink);color:var(--paper);font-size:.78rem;font-weight:800}.principle h3{margin:1px 0 4px;font-size:.98rem}.principle p{margin:0;color:var(--muted);font-size:.86rem}
+    .skills-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.skill-card{position:relative;overflow:hidden;min-height:285px;padding:29px;border:1px solid var(--line);border-radius:22px;background:var(--card);transition:transform .18s,box-shadow .18s}.skill-card:hover{box-shadow:var(--shadow);transform:translateY(-4px)}.skill-index{position:absolute;top:24px;right:26px;color:var(--accent-dark);font-family:Georgia,serif;font-size:.86rem;font-style:italic}.skill-icon{display:grid;width:48px;height:48px;border-radius:14px;place-items:center;background:var(--ink);color:var(--paper)}.skill-icon svg{width:23px;height:23px}.skill-card h3{margin:22px 0 8px;font-family:Georgia,serif;font-size:1.55rem;font-weight:500;letter-spacing:-.025em}.skill-card p{margin:0;color:var(--muted);font-size:.91rem}
+    .tags{display:flex;margin:20px 0 0;padding:0;gap:8px;flex-wrap:wrap;list-style:none}.tags li{padding:7px 11px;border:1px solid var(--line);border-radius:999px;background:var(--solid-card);font-size:.74rem;font-weight:700}
+
+    .project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.project-card{display:flex;min-height:440px;padding:clamp(26px,4vw,42px);border:1px solid var(--line);border-radius:28px;flex-direction:column;background:var(--solid-card);box-shadow:0 14px 44px rgba(33,44,38,.06)}.project-card:first-child{background:var(--green);color:var(--paper)}html[data-theme="dark"] .project-card:first-child{color:#101916}.project-topline{display:flex;align-items:center;justify-content:space-between}.project-type{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.project-number{display:grid;width:43px;height:43px;border:1px solid currentColor;border-radius:50%;place-items:center;font-family:Georgia,serif;font-style:italic}.project-card h3{margin:72px 0 16px;font-family:Georgia,serif;font-size:clamp(1.8rem,3.4vw,2.75rem);font-weight:500;letter-spacing:-.04em;line-height:1.08}.project-card p{margin:0;color:var(--muted);font-size:.94rem}.project-card:first-child p{color:color-mix(in srgb,currentColor 74%,transparent)}.project-card .tags{margin-top:auto;padding-top:32px}.project-card:first-child .tags li{border-color:rgba(255,255,255,.25);background:rgba(255,255,255,.1)}html[data-theme="dark"] .project-card:first-child .tags li{border-color:rgba(16,25,22,.2);background:rgba(255,255,255,.18)}
+
+    .experience-layout{display:grid;grid-template-columns:minmax(220px,.55fr) minmax(0,1.45fr);gap:clamp(45px,8vw,100px);align-items:start}.experience-aside{position:sticky;top:112px}.experience-aside .section-title{font-size:clamp(2.6rem,5vw,4.7rem)}.experience-aside p:last-child{margin:22px 0 0;color:var(--muted)}.timeline{border-top:1px solid var(--line)}.role{display:grid;padding:34px 0 36px;border-bottom:1px solid var(--line);grid-template-columns:150px 1fr;gap:26px}.role-meta{color:var(--muted);font-size:.78rem;font-weight:650}.role-meta time{display:block;margin-bottom:8px;color:var(--accent-dark);font-weight:800}.role h3{margin:0;font-family:Georgia,serif;font-size:1.55rem;font-weight:500;letter-spacing:-.025em}.role-company{margin:3px 0 15px;color:var(--green);font-size:.88rem;font-weight:800}.role ul{margin:0;padding-left:1.1rem;color:var(--muted);font-size:.91rem}.role li+li{margin-top:8px}
+
+    .education-grid{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);gap:18px}.education-card{display:flex;min-height:350px;padding:34px;border:1px solid var(--line);border-radius:24px;flex-direction:column;background:var(--card)}.education-year{color:var(--accent-dark);font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.education-card h3{max-width:570px;margin:54px 0 10px;font-family:Georgia,serif;font-size:clamp(1.65rem,3vw,2.5rem);font-weight:500;letter-spacing:-.035em;line-height:1.08}.education-school{margin:0;color:var(--green);font-weight:800}.education-detail{margin:8px 0 0;color:var(--muted);font-size:.88rem}.thesis{margin-top:auto;padding-top:28px}.thesis span{display:block;margin-bottom:6px;color:var(--muted);font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.thesis p{margin:0;font-size:.84rem;font-weight:650;line-height:1.5}
+    .language-strip{display:grid;margin-top:18px;border:1px solid var(--line);border-radius:22px;grid-template-columns:repeat(3,1fr);background:var(--ink);color:var(--paper)}.language{padding:26px 30px;border-right:1px solid rgba(244,240,232,.18)}.language:last-child{border-right:0}.language strong{display:block;font-family:Georgia,serif;font-size:1.3rem;font-weight:500}.language span{color:color-mix(in srgb,var(--paper) 67%,transparent);font-size:.78rem}
+
+    .contact-card{position:relative;overflow:hidden;padding:clamp(35px,7vw,78px);border-radius:32px;background:var(--ink);color:var(--paper)}.contact-card::after{position:absolute;right:-100px;bottom:-140px;width:410px;height:410px;border-radius:50%;background:var(--accent);content:"";opacity:.95}.contact-content{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr);gap:50px;align-items:end}.contact-card .eyebrow{color:var(--lime)}.contact-card h2{max-width:700px;margin:0;font-family:Georgia,serif;font-size:clamp(2.7rem,6vw,5.7rem);font-weight:500;letter-spacing:-.055em;line-height:.96}.contact-card h2 em{color:var(--lime);font-weight:inherit}.contact-card p:not(.eyebrow){max-width:580px;margin:22px 0 0;color:rgba(244,240,232,.68)}.contact-links{display:grid;gap:10px}.contact-link{display:flex;min-height:55px;padding:0 18px;border:1px solid rgba(244,240,232,.2);border-radius:999px;align-items:center;justify-content:space-between;background:rgba(244,240,232,.06);font-size:.84rem;font-weight:750;transition:background .18s,transform .18s}.contact-link:hover{background:rgba(244,240,232,.13);transform:translateX(4px)}.contact-link svg{width:17px;height:17px}
+    .site-footer{padding:30px 0 42px}.footer-inner{display:flex;gap:20px;align-items:center;justify-content:space-between;color:var(--muted);font-size:.78rem}.footer-inner a{font-weight:750}.footer-inner a:hover{color:var(--ink)}
+    .reveal{opacity:1;transform:none}.js .reveal.is-visible{animation:reveal-in .62s ease both}@keyframes reveal-in{from{transform:translateY(14px)}to{transform:none}}
+
+    @media(max-width:900px){
+      .section{padding:85px 0}.nav-panel{position:fixed;top:76px;right:20px;left:20px;display:none;padding:22px;border:1px solid var(--line);border-radius:20px;align-items:stretch;flex-direction:column;background:var(--solid-card);box-shadow:var(--shadow)}.nav-panel.is-open{display:flex}.nav-links{align-items:stretch;flex-direction:column;gap:4px}.nav-links a{display:block;padding:11px 4px;font-size:1rem}.nav-links a::after{display:none}.nav-panel .button{width:100%}.menu-button{display:grid}
+      .hero-grid,.about-grid,.experience-layout,.contact-content{grid-template-columns:1fr}.hero{min-height:auto;padding-top:145px}.portrait-wrap{width:min(78%,430px);margin:20px auto 0}.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}.stat:nth-child(3){padding-left:0}.section-heading{grid-template-columns:1fr;gap:18px}.experience-aside{position:static}.education-grid{grid-template-columns:1fr}.contact-links{max-width:480px}
+    }
+    @media(max-width:650px){
+      .container{width:min(calc(100% - 28px),var(--max))}.section{padding:72px 0}.hero h1{font-size:clamp(3.1rem,15.5vw,5.7rem)}.hero-summary{margin-top:23px}.hero-meta{align-items:flex-start;flex-direction:column}.portrait-wrap{width:min(88%,390px)}.hero-note{top:26px;left:-16px;width:86px;height:86px;font-size:.76rem}.portrait-label{right:-12px;bottom:30px}.stats{margin-top:46px}.stat{padding:22px 12px}.skill-card,.project-card,.education-card{border-radius:19px}.skills-grid,.project-grid{grid-template-columns:1fr}.project-card{min-height:390px}.project-card h3{margin-top:52px}.role{grid-template-columns:1fr;gap:12px}.language-strip{grid-template-columns:1fr}.language{border-right:0;border-bottom:1px solid rgba(244,240,232,.18)}.language:last-child{border-bottom:0}.contact-card{border-radius:24px}.contact-card::after{opacity:.45}.contact-link{overflow:hidden;font-size:.77rem;white-space:nowrap}.footer-inner{align-items:flex-start;flex-direction:column}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important}.js .reveal{opacity:1;transform:none}}
+  </style>
+
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Person","name":"Washim Akram","jobTitle":"Software Engineer","email":"mailto:akram116223@gmail.com","telephone":"+43 688 640 58036","address":{"@type":"PostalAddress","addressLocality":"Vienna","addressCountry":"AT"},"sameAs":["https://www.linkedin.com/in/washim-akram-460026184/","https://akramswe.github.io/"],"alumniOf":[{"@type":"CollegeOrUniversity","name":"Daffodil International University"},{"@type":"CollegeOrUniversity","name":"University of Vienna"}]}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="siteHeader">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="logo" href="#home" aria-label="Washim Akram — home">WA</a>
+      <div class="nav-panel" id="navPanel">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li><li><a href="#expertise">Expertise</a></li>
+          <li><a href="#work">Work</a></li><li><a href="#experience">Experience</a></li><li><a href="#contact">Contact</a></li>
+        </ul>
+        <a class="button button--primary" href="CV.pdf" download>Download CV</a>
+      </div>
+      <div class="nav-actions">
+        <button class="icon-button" id="themeButton" type="button" aria-label="Switch to dark theme">
+          <svg class="theme-sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.41M17.66 6.34l1.41-1.41"></path></svg>
+          <svg class="theme-moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"></path></svg>
+        </button>
+        <button class="icon-button menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="navPanel" aria-label="Open menu"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="reveal">
+            <div class="status"><span class="status-dot"></span>Open to software engineering opportunities</div>
+            <p class="eyebrow">Software Engineer · Vienna</p>
+            <h1>Engineering clarity into <em>complex systems.</em></h1>
+            <p class="hero-summary">I’m Washim Akram, a software engineer working across backend applications, production systems, data integration, and program analysis — with a practical focus on reliable software and thoughtful problem-solving.</p>
+            <div class="hero-actions">
+              <a class="button button--primary" href="#work">Explore my work <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 14 0M13 6l6 6-6 6"></path></svg></a>
+              <a class="button button--secondary" href="CV.pdf" download>Download CV <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"></path></svg></a>
+            </div>
+            <ul class="hero-meta">
+              <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Vienna, Austria</li>
+              <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4zM4 7l8 6 8-6"></path></svg><a href="mailto:akram116223@gmail.com">akram116223@gmail.com</a></li>
+              <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8.5 3h-4A1.5 1.5 0 0 0 3 4.5C3 13.61 10.39 21 19.5 21a1.5 1.5 0 0 0 1.5-1.5v-4l-4.5-1.5-1 2.5a14.54 14.54 0 0 1-8-8l2.5-1L8.5 3Z"></path></svg><a href="tel:+4368864058036">+43&nbsp;688&nbsp;640&nbsp;58036</a></li>
+            </ul>
+          </div>
+          <div class="portrait-wrap reveal">
+            <div class="hero-note">Backend<br>&amp; beyond</div>
+            <div class="portrait-frame"><img src="washim-akram.jpg" alt="Portrait of Washim Akram" width="480" height="585"></div>
+            <div class="portrait-label"><span>Current focus</span>M.Sc. Computer Science · final semester</div>
+          </div>
+        </div>
+        <div class="stats reveal">
+          <div class="stat"><strong>3+ years</strong><span>Software engineering experience</span></div>
+          <div class="stat"><strong>25%</strong><span>Faster delivery through coordination</span></div>
+          <div class="stat"><strong>2</strong><span>Selected research projects</span></div>
+          <div class="stat"><strong>3.95 / 4</strong><span>B.Sc. graduating CGPA</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tinted" id="about">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><p class="eyebrow">About me</p><h2 class="section-title">From production systems to software research.</h2></div>
+          <p class="section-intro">I bring professional experience in backend maintenance, incident investigation, testing, and data-driven services together with academic work in reverse engineering and LLM-assisted program analysis.</p>
+        </div>
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p>My engineering background spans <strong>C, C++, PHP, Java, Python, and SQL</strong>, supported by hands-on work with Linux, Git, Docker, databases, ETL workflows, and structured data technologies.</p>
+            <p>I enjoy moving between layers: understanding a difficult production issue, tracing data through a backend service, designing an analysis pipeline, or explaining a technical finding clearly to a team.</p>
+            <p>I’m currently completing an M.Sc. in Computer Science at the University of Vienna and am <strong>eligible to work in Austria</strong>.</p>
+          </div>
+          <div class="principles reveal">
+            <article class="principle"><div class="principle-number">01</div><div><h3>Investigate methodically</h3><p>Trace symptoms to their technical cause before choosing the fix.</p></div></article>
+            <article class="principle"><div class="principle-number">02</div><div><h3>Build for reliability</h3><p>Validate behavior, data handling, and stability before delivery.</p></div></article>
+            <article class="principle"><div class="principle-number">03</div><div><h3>Communicate clearly</h3><p>Turn complex findings into useful next steps for technical teams.</p></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="expertise">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><p class="eyebrow">Expertise</p><h2 class="section-title">A practical, systems-minded toolkit.</h2></div>
+          <p class="section-intro">A broad technical foundation shaped by production engineering, backend data services, and computer-science research.</p>
+        </div>
+        <div class="skills-grid">
+          <article class="skill-card reveal">
+            <span class="skill-index">01</span><div class="skill-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M14 5l-4 14"></path></svg></div>
+            <h3>Software Engineering</h3><p>Object-oriented programming, backend development, algorithms, debugging, testing, and technical problem-solving.</p>
+            <ul class="tags"><li>C</li><li>C++</li><li>Java</li><li>Python</li><li>PHP</li><li>SQL</li></ul>
+          </article>
+          <article class="skill-card reveal">
+            <span class="skill-index">02</span><div class="skill-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 7c0 2 3.58 3 8 3s8-1 8-3-3.58-3-8-3-8 1-8 3Z"></path><path d="M4 7v5c0 2 3.58 3 8 3s8-1 8-3V7M4 12v5c0 2 3.58 3 8 3s8-1 8-3v-5"></path></svg></div>
+            <h3>Data &amp; Integration</h3><p>Database services, stored procedures, ETL, connectivity, validation, transformation, and structured-data workflows.</p>
+            <ul class="tags"><li>SQL Server</li><li>MySQL</li><li>MongoDB</li><li>JDBC</li><li>Pervasive ETL</li><li>XML / XSD</li><li>JSON / JSON Schema</li><li>XSLT</li><li>XPath / XQuery</li></ul>
+          </article>
+          <article class="skill-card reveal">
+            <span class="skill-index">03</span><div class="skill-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 3h6l1 3 3 1v6l-3 1-1 3H9l-1-3-3-1V7l3-1 1-3Z"></path><circle cx="12" cy="10" r="2.5"></circle><path d="M8 21h8M12 17v4"></path></svg></div>
+            <h3>Program Analysis &amp; Research</h3><p>Static analysis, reverse engineering, obfuscation analysis, control flow, algorithm identification, and LLM-assisted code analysis.</p>
+            <ul class="tags"><li>Static analysis</li><li>Reverse engineering</li><li>Control flow</li><li>LLM agents</li></ul>
+          </article>
+          <article class="skill-card reveal">
+            <span class="skill-index">04</span><div class="skill-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="13" rx="2"></rect><path d="m7 9 2 2-2 2M12 13h4M8 21h8M12 17v4"></path></svg></div>
+            <h3>Systems &amp; Delivery</h3><p>Production environments, source control, containers, API testing, networking concepts, agile work, and delivery automation.</p>
+            <ul class="tags"><li>Linux</li><li>Windows</li><li>Git / GitLab / GitHub</li><li>Docker</li><li>Postman</li><li>CI/CD</li><li>TCP/IP</li><li>LAN / WAN / VLAN</li><li>Distributed systems</li><li>Software architecture</li><li>Scrum</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tinted" id="work">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><p class="eyebrow">Selected work</p><h2 class="section-title">Research through working software.</h2></div>
+          <p class="section-intro">Academic projects at the University of Vienna exploring program behavior, obfuscation, function-call structure, and LLM-assisted analysis.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card reveal">
+            <div class="project-topline"><span class="project-type">Program analysis</span><span class="project-number">01</span></div>
+            <h3>Algorithm identification in obfuscated C programs</h3>
+            <p>Developed a Python analysis pipeline to identify algorithms after control-flow flattening with Tigress. Combined static semantic features, rule-based classification, and LLM-assisted analysis, then verified predictions against JSON ground truth.</p>
+            <ul class="tags"><li>Python</li><li>C</li><li>Tigress</li><li>Static analysis</li><li>LLM analysis</li></ul>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-topline"><span class="project-type">LLM evaluation</span><span class="project-number">02</span></div>
+            <h3>Reconstructing long function-call chains</h3>
+            <p>Built a Python framework to generate C programs and evaluate LLM reconstruction of call chains up to 1,000 functions, including direct calls, function pointers, pointer arrays, structures, and switch-based dispatch.</p>
+            <ul class="tags"><li>Python</li><li>C</li><li>API integration</li><li>Automation</li><li>JSON</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container experience-layout">
+        <div class="experience-aside reveal"><p class="eyebrow">Experience</p><h2 class="section-title">Professional journey.</h2><p>Backend services, production support, data workflows, software testing, and technical education across international teams.</p></div>
+        <div class="timeline">
+          <article class="role reveal">
+            <div class="role-meta"><time datetime="2023-01/2023-12">Jan–Dec 2023</time>Dhaka · Hybrid</div>
+            <div><h3>Software Engineer</h3><p class="role-company">Limerick Resources Ltd.</p><ul><li>Investigated application and service issues, tested software changes, and validated data handling and stability before delivery.</li><li>Built data-validation and integration work with XML, XSD, XSLT, XPath, XQuery, JSON, and JSON Schema, while troubleshooting JDBC connectivity.</li><li>Coordinated more than five engineers across development, testing, and delivery, contributing to an approximately 25% improvement in delivery time.</li></ul></div>
+          </article>
+          <article class="role reveal">
+            <div class="role-meta"><time datetime="2022-03/2022-12">Mar–Dec 2022</time>United States · Remote</div>
+            <div><h3>Software Engineer</h3><p class="role-company">Nassprotech</p><ul><li>Maintained backend applications and SQL services with attention to availability, performance, data accuracy, and reliability.</li><li>Investigated production incidents and maintained stored procedures, ETL workflows, data-processing services, and reporting solutions.</li><li>Validated changes, improved technical documentation, and contributed to automation for recurring service tasks.</li></ul></div>
+          </article>
+          <article class="role reveal">
+            <div class="role-meta"><time datetime="2020-08/2022-03">Aug 2020–Mar 2022</time>United States · Remote</div>
+            <div><h3>Junior Software Engineer</h3><p class="role-company">Nassprotech</p><ul><li>Supported backend applications and production data services, diagnosing application, database, and operational issues.</li><li>Worked with SQL, ETL, and reporting systems; tested service changes and documented technical work.</li></ul></div>
+          </article>
+          <article class="role reveal">
+            <div class="role-meta"><time datetime="2019-01/2020-04">Jan 2019–Apr 2020</time>Dhaka · On-site</div>
+            <div><h3>Lab Teaching Assistant</h3><p class="role-company">Daffodil International University</p><ul><li>Helped students resolve programming, software, and object-oriented development issues during laboratory sessions.</li><li>Reviewed technical reports and provided feedback on implementation, problem-solving, and documentation.</li></ul></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tinted" id="education">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><p class="eyebrow">Education</p><h2 class="section-title">Continuous learning, applied deeply.</h2></div>
+          <p class="section-intro">Formal study in software engineering and computer science, with current research focused on securing agentic reverse-engineering systems.</p>
+        </div>
+        <div class="education-grid">
+          <article class="education-card reveal">
+            <span class="education-year">2024 — Present · Final semester</span><h3>Master of Science in Computer Science</h3><p class="education-school">University of Vienna · Austria</p>
+            <div class="thesis"><span>Master’s thesis</span><p>Trust-Boundary Enforcement for Agentic Reverse Engineering of Obfuscated Binaries: Securing LLM Agents Against Adversarial Artifacts and Tool-Chain Manipulation</p></div>
+          </article>
+          <article class="education-card reveal"><span class="education-year">2016 — 2020</span><h3>Bachelor of Science in Software Engineering</h3><p class="education-school">Daffodil International University · Bangladesh</p><p class="education-detail">CGPA: 3.95 / 4.00<br>German equivalent: 1.1</p></article>
+        </div>
+        <div class="language-strip reveal"><div class="language"><strong>English</strong><span>C1 · Advanced</span></div><div class="language"><strong>German</strong><span>B1 · Working toward B2</span></div><div class="language"><strong>Bengali</strong><span>Native</span></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div class="contact-content">
+            <div><p class="eyebrow">Get in touch</p><h2>Let’s build something <em>reliable.</em></h2><p>I’m open to software engineering opportunities and thoughtful collaborations in Vienna and beyond.</p></div>
+            <div class="contact-links">
+              <a class="contact-link" href="mailto:akram116223@gmail.com">Email me <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 14 0M13 6l6 6-6 6"></path></svg></a>
+              <a class="contact-link" href="https://www.linkedin.com/in/washim-akram-460026184/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"></path></svg></a>
+              <a class="contact-link" href="tel:+4368864058036">Call&nbsp;+43&nbsp;688&nbsp;640&nbsp;58036 <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 14 0M13 6l6 6-6 6"></path></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><span>© <span id="year"></span> Washim Akram. Built with care in Vienna.</span><a href="#home">Back to top ↑</a></div></footer>
+
+  <script>
+    const root=document.documentElement,header=document.getElementById("siteHeader"),themeButton=document.getElementById("themeButton"),menuButton=document.getElementById("menuButton"),navPanel=document.getElementById("navPanel"),navLinks=[...document.querySelectorAll(".nav-links a")];
+    function updateThemeLabel(){const dark=root.dataset.theme==="dark";themeButton.setAttribute("aria-label",dark?"Switch to light theme":"Switch to dark theme")}
+    function closeMenu(){navPanel.classList.remove("is-open");menuButton.setAttribute("aria-expanded","false");menuButton.setAttribute("aria-label","Open menu")}
+    themeButton.addEventListener("click",()=>{const next=root.dataset.theme==="dark"?"light":"dark";if(next==="dark")root.dataset.theme="dark";else delete root.dataset.theme;try{localStorage.setItem("portfolio-theme",next)}catch(error){}updateThemeLabel()});
+    menuButton.addEventListener("click",()=>{const open=navPanel.classList.toggle("is-open");menuButton.setAttribute("aria-expanded",String(open));menuButton.setAttribute("aria-label",open?"Close menu":"Open menu")});
+    navLinks.forEach(link=>link.addEventListener("click",closeMenu));document.addEventListener("keydown",event=>{if(event.key==="Escape")closeMenu()});window.addEventListener("scroll",()=>header.classList.toggle("is-scrolled",window.scrollY>10),{passive:true});
+    const revealObserver=new IntersectionObserver((entries,observer)=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("is-visible");observer.unobserve(entry.target)}}),{threshold:.12});document.querySelectorAll(".reveal").forEach(el=>revealObserver.observe(el));
+    const sections=[...document.querySelectorAll("main section[id]")];const sectionObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(!entry.isIntersecting)return;navLinks.forEach(link=>{const active=link.getAttribute("href")===`#${entry.target.id}`;if(active)link.setAttribute("aria-current","true");else link.removeAttribute("aria-current")})}),{rootMargin:"-35% 0px -55%",threshold:0});sections.forEach(section=>sectionObserver.observe(section));
+    document.getElementById("year").textContent=new Date().getFullYear();updateThemeLabel();
+  </script>
 </body>
 </html>
