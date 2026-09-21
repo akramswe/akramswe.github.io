@@ -64,6 +64,8 @@
     .tags{display:flex;margin:20px 0 0;padding:0;gap:8px;flex-wrap:wrap;list-style:none}.tags li{padding:7px 11px;border:1px solid var(--line);border-radius:999px;background:var(--solid-card);font-size:.74rem;font-weight:700}
 
     .project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.project-card{display:flex;min-height:440px;padding:clamp(26px,4vw,42px);border:1px solid var(--line);border-radius:28px;flex-direction:column;background:var(--solid-card);box-shadow:0 14px 44px rgba(33,44,38,.06)}.project-card:first-child{background:var(--green);color:var(--paper)}html[data-theme="dark"] .project-card:first-child{color:#101916}.project-topline{display:flex;align-items:center;justify-content:space-between}.project-type{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.project-number{display:grid;width:43px;height:43px;border:1px solid currentColor;border-radius:50%;place-items:center;font-family:Georgia,serif;font-style:italic}.project-card h3{margin:72px 0 16px;font-family:Georgia,serif;font-size:clamp(1.8rem,3.4vw,2.75rem);font-weight:500;letter-spacing:-.04em;line-height:1.08}.project-card p{margin:0;color:var(--muted);font-size:.94rem}.project-card:first-child p{color:color-mix(in srgb,currentColor 74%,transparent)}.project-card .tags{margin-top:auto;padding-top:32px}.project-card:first-child .tags li{border-color:rgba(255,255,255,.25);background:rgba(255,255,255,.1)}html[data-theme="dark"] .project-card:first-child .tags li{border-color:rgba(16,25,22,.2);background:rgba(255,255,255,.18)}
+    .project-group+.project-group{margin-top:58px}.project-group-label{margin:0 0 17px;color:var(--accent-dark);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.project-grid--web{grid-template-columns:repeat(3,minmax(0,1fr))}.project-grid--web .project-card{min-height:470px;padding:28px}.project-grid--web .project-card h3{margin-top:56px;font-size:clamp(1.65rem,2.4vw,2.25rem)}.project-link{display:inline-flex;width:max-content;max-width:100%;margin-top:20px;gap:7px;align-items:center;color:var(--accent-dark);font-size:.86rem;font-weight:800;text-decoration:underline;text-underline-offset:4px}.project-link:hover{text-decoration-thickness:2px}.project-card:first-child .project-link{color:var(--lime)}
+    .publications{border-bottom:1px solid var(--line)}.publication-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.publication-card{display:flex;min-height:430px;padding:clamp(28px,4vw,42px);border:1px solid var(--line);border-radius:24px;flex-direction:column;background:var(--card);box-shadow:0 14px 44px rgba(33,44,38,.06)}.publication-meta{display:flex;gap:12px;align-items:center;color:var(--accent-dark);font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.publication-meta span+span::before{margin-right:12px;color:var(--muted);content:"·"}.publication-card h3{margin:36px 0 16px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.65rem,2.7vw,2.35rem);font-weight:500;letter-spacing:-.035em;line-height:1.12}.publication-authors{margin:0;color:var(--muted);font-size:.88rem}.publication-authors strong{color:var(--ink)}.publication-venue{margin:22px 0 0;color:var(--green);font-size:.87rem;font-weight:750}.publication-link{display:inline-flex;width:max-content;max-width:100%;margin-top:auto;padding-top:24px;gap:7px;align-items:center;color:var(--accent-dark);font-size:.9rem;font-weight:800;text-decoration:underline;text-underline-offset:4px}.publication-link:hover{text-decoration-thickness:2px}
 
     .experience-layout{display:grid;grid-template-columns:minmax(220px,.55fr) minmax(0,1.45fr);gap:clamp(45px,8vw,100px);align-items:start}.experience-aside{position:sticky;top:112px}.experience-aside .section-title{font-size:clamp(2.6rem,5vw,4.7rem)}.experience-aside p:last-child{margin:22px 0 0;color:var(--muted)}.timeline{border-top:1px solid var(--line)}.role{display:grid;padding:34px 0 36px;border-bottom:1px solid var(--line);grid-template-columns:150px 1fr;gap:26px}.role-meta{color:var(--muted);font-size:.78rem;font-weight:650}.role-meta time{display:block;margin-bottom:8px;color:var(--accent-dark);font-weight:800}.role h3{margin:0;font-family:Georgia,serif;font-size:1.55rem;font-weight:500;letter-spacing:-.025em}.role-company{margin:3px 0 15px;color:var(--green);font-size:.88rem;font-weight:800}.role ul{margin:0;padding-left:1.1rem;color:var(--muted);font-size:.91rem}.role li+li{margin-top:8px}
 
@@ -76,16 +78,16 @@
 
     @media(max-width:900px){
       .section{padding:85px 0}.nav-panel{position:fixed;top:76px;right:20px;left:20px;display:none;padding:22px;border:1px solid var(--line);border-radius:20px;align-items:stretch;flex-direction:column;background:var(--solid-card);box-shadow:var(--shadow)}.nav-panel.is-open{display:flex}.nav-links{align-items:stretch;flex-direction:column;gap:4px}.nav-links a{display:block;padding:11px 4px;font-size:1rem}.nav-links a::after{display:none}.nav-panel .button{width:100%}.menu-button{display:grid}
-      .hero-grid,.about-grid,.experience-layout,.contact-content{grid-template-columns:1fr}.hero{min-height:auto;padding-top:145px}.portrait-wrap{width:min(78%,430px);margin:20px auto 0}.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}.stat:nth-child(3){padding-left:0}.section-heading{grid-template-columns:1fr;gap:18px}.experience-aside{position:static}.education-grid{grid-template-columns:1fr}.contact-links{max-width:480px}
+      .hero-grid,.about-grid,.experience-layout,.contact-content{grid-template-columns:1fr}.hero{min-height:auto;padding-top:145px}.portrait-wrap{width:min(78%,430px);margin:20px auto 0}.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}.stat:nth-child(3){padding-left:0}.section-heading{grid-template-columns:1fr;gap:18px}.experience-aside{position:static}.education-grid,.publication-grid{grid-template-columns:1fr}.contact-links{max-width:480px}.project-grid--web{grid-template-columns:repeat(2,minmax(0,1fr))}.project-grid--web .project-card:last-child{grid-column:1/-1;min-height:340px}
     }
     @media(max-width:650px){
-      .container{width:min(calc(100% - 28px),var(--max))}.section{padding:72px 0}.hero h1{font-size:clamp(3.1rem,15.5vw,5.7rem)}.hero-summary{margin-top:23px}.hero-meta{align-items:flex-start;flex-direction:column}.portrait-wrap{width:min(88%,390px)}.hero-note{top:26px;left:-16px;width:86px;height:86px;font-size:.76rem}.portrait-label{right:-12px;bottom:30px}.stats{margin-top:46px}.stat{padding:22px 12px}.skill-card,.project-card,.education-card{border-radius:19px}.skills-grid,.project-grid{grid-template-columns:1fr}.project-card{min-height:390px}.project-card h3{margin-top:52px}.role{grid-template-columns:1fr;gap:12px}.language-strip{grid-template-columns:1fr}.language{border-right:0;border-bottom:1px solid rgba(244,240,232,.18)}.language:last-child{border-bottom:0}.contact-card{border-radius:24px}.contact-card::after{opacity:.45}.contact-link{overflow:hidden;font-size:.77rem;white-space:nowrap}.footer-inner{align-items:flex-start;flex-direction:column}
+      .container{width:min(calc(100% - 28px),var(--max))}.section{padding:72px 0}.hero h1{font-size:clamp(3.1rem,15.5vw,5.7rem)}.hero-summary{margin-top:23px}.hero-meta{align-items:flex-start;flex-direction:column}.portrait-wrap{width:min(88%,390px)}.hero-note{top:26px;left:-16px;width:86px;height:86px;font-size:.76rem}.portrait-label{right:-12px;bottom:30px}.stats{margin-top:46px}.stat{padding:22px 12px}.skill-card,.project-card,.education-card{border-radius:19px}.skills-grid,.project-grid,.project-grid--web{grid-template-columns:1fr}.project-grid--web .project-card:last-child{grid-column:auto;min-height:390px}.project-card{min-height:390px}.project-card h3{margin-top:52px}.role{grid-template-columns:1fr;gap:12px}.language-strip{grid-template-columns:1fr}.language{border-right:0;border-bottom:1px solid rgba(244,240,232,.18)}.language:last-child{border-bottom:0}.contact-card{border-radius:24px}.contact-card::after{opacity:.45}.contact-link{overflow:hidden;font-size:.77rem;white-space:nowrap}.footer-inner{align-items:flex-start;flex-direction:column}
     }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important}.js .reveal{opacity:1;transform:none}}
   </style>
 
   <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"Person","name":"Washim Akram","jobTitle":"Software Engineer","email":"mailto:akram116223@gmail.com","telephone":"+43 688 640 58036","address":{"@type":"PostalAddress","addressLocality":"Vienna","addressCountry":"AT"},"sameAs":["https://www.linkedin.com/in/washim-akram-460026184/","https://akramswe.github.io/"],"alumniOf":[{"@type":"CollegeOrUniversity","name":"Daffodil International University"},{"@type":"CollegeOrUniversity","name":"University of Vienna"}]}
+    {"@context":"https://schema.org","@type":"Person","name":"Washim Akram","jobTitle":"Software Engineer","email":"mailto:akram116223@gmail.com","telephone":"+43 688 640 58036","address":{"@type":"PostalAddress","addressLocality":"Vienna","addressCountry":"AT"},"sameAs":["https://www.linkedin.com/in/washim-akram-460026184/","https://github.com/akramswe","https://akramswe.github.io/"],"alumniOf":[{"@type":"CollegeOrUniversity","name":"Daffodil International University"},{"@type":"CollegeOrUniversity","name":"University of Vienna"}]}
   </script>
 </head>
 <body>
@@ -96,7 +98,7 @@
       <div class="nav-panel" id="navPanel">
         <ul class="nav-links">
           <li><a href="#about">About</a></li><li><a href="#expertise">Expertise</a></li>
-          <li><a href="#work">Work</a></li><li><a href="#experience">Experience</a></li><li><a href="#contact">Contact</a></li>
+          <li><a href="#work">Work</a></li><li><a href="#publications">Publications</a></li><li><a href="#experience">Experience</a></li><li><a href="#contact">Contact</a></li>
         </ul>
         <a class="button button--primary" href="CV.pdf" download>Download CV</a>
       </div>
@@ -127,19 +129,20 @@
               <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Vienna, Austria</li>
               <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4zM4 7l8 6 8-6"></path></svg><a href="mailto:akram116223@gmail.com">akram116223@gmail.com</a></li>
               <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8.5 3h-4A1.5 1.5 0 0 0 3 4.5C3 13.61 10.39 21 19.5 21a1.5 1.5 0 0 0 1.5-1.5v-4l-4.5-1.5-1 2.5a14.54 14.54 0 0 1-8-8l2.5-1L8.5 3Z"></path></svg><a href="tel:+4368864058036">+43&nbsp;688&nbsp;640&nbsp;58036</a></li>
+              <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M7 7h10v10"></path></svg><a href="https://github.com/akramswe" target="_blank" rel="noopener noreferrer">GitHub</a></li>
             </ul>
           </div>
           <div class="portrait-wrap reveal">
             <div class="hero-note">Backend<br>&amp; beyond</div>
             <div class="portrait-frame"><img src="washim-akram.jpg" alt="Portrait of Washim Akram" width="480" height="585"></div>
-            <div class="portrait-label"><span>Current focus</span>M.Sc. Computer Science · final semester</div>
+            <div class="portrait-label"><span>Current focus</span>M.Sc. Computer Science · final year</div>
           </div>
         </div>
         <div class="stats reveal">
           <div class="stat"><strong>3+ years</strong><span>Software engineering experience</span></div>
           <div class="stat"><strong>25%</strong><span>Faster delivery through coordination</span></div>
-          <div class="stat"><strong>2</strong><span>Selected research projects</span></div>
-          <div class="stat"><strong>3.95 / 4</strong><span>B.Sc. graduating CGPA</span></div>
+          <div class="stat"><strong>5</strong><span>Selected projects</span></div>
+          <div class="stat"><strong>2</strong><span>Published research works</span></div>
         </div>
       </div>
     </section>
@@ -148,13 +151,13 @@
       <div class="container">
         <div class="section-heading reveal">
           <div><p class="eyebrow">About me</p><h2 class="section-title">From production systems to software research.</h2></div>
-          <p class="section-intro">I bring professional experience in backend maintenance, incident investigation, testing, and data-driven services together with academic work in reverse engineering and LLM-assisted program analysis.</p>
+          <p class="section-intro">I bring professional experience in backend maintenance, incident investigation, testing, and data-driven services together with published machine-learning research and current work in reverse engineering and LLM-assisted program analysis.</p>
         </div>
         <div class="about-grid">
           <div class="about-copy reveal">
-            <p>My engineering background spans <strong>C, C++, PHP, Java, Python, and SQL</strong>, supported by hands-on work with Linux, Git, Docker, databases, ETL workflows, and structured data technologies.</p>
+            <p>My engineering background spans <strong>C, C++, PHP, Java, Python, and SQL</strong>, with experience using <strong>Laravel and Spring Boot</strong> for backend development. I also work with Linux, Git, Docker, databases, ETL workflows, and structured data technologies.</p>
             <p>I enjoy moving between layers: understanding a difficult production issue, tracing data through a backend service, designing an analysis pipeline, or explaining a technical finding clearly to a team.</p>
-            <p>I’m currently completing an M.Sc. in Computer Science at the University of Vienna and am <strong>eligible to work in Austria</strong>.</p>
+            <p>I’m in the final year of my M.Sc. in Computer Science at the University of Vienna and am <strong>eligible to work in Austria</strong>.</p>
           </div>
           <div class="principles reveal">
             <article class="principle"><div class="principle-number">01</div><div><h3>Investigate methodically</h3><p>Trace symptoms to their technical cause before choosing the fix.</p></div></article>
@@ -174,8 +177,8 @@
         <div class="skills-grid">
           <article class="skill-card reveal">
             <span class="skill-index">01</span><div class="skill-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M14 5l-4 14"></path></svg></div>
-            <h3>Software Engineering</h3><p>Object-oriented programming, backend development, algorithms, debugging, testing, and technical problem-solving.</p>
-            <ul class="tags"><li>C</li><li>C++</li><li>Java</li><li>Python</li><li>PHP</li><li>SQL</li></ul>
+            <h3>Software Engineering</h3><p>Object-oriented programming, backend development with Laravel and Spring Boot, algorithms, debugging, testing, and technical problem-solving.</p>
+            <ul class="tags"><li>C</li><li>C++</li><li>Java</li><li>Python</li><li>PHP</li><li>SQL</li><li>Laravel</li><li>Spring Boot</li></ul>
           </article>
           <article class="skill-card reveal">
             <span class="skill-index">02</span><div class="skill-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 7c0 2 3.58 3 8 3s8-1 8-3-3.58-3-8-3-8 1-8 3Z"></path><path d="M4 7v5c0 2 3.58 3 8 3s8-1 8-3V7M4 12v5c0 2 3.58 3 8 3s8-1 8-3v-5"></path></svg></div>
@@ -199,21 +202,73 @@
     <section class="section section--tinted" id="work">
       <div class="container">
         <div class="section-heading reveal">
-          <div><p class="eyebrow">Selected work</p><h2 class="section-title">Research through working software.</h2></div>
-          <p class="section-intro">Academic projects at the University of Vienna exploring program behavior, obfuscation, function-call structure, and LLM-assisted analysis.</p>
+          <div><p class="eyebrow">Selected work</p><h2 class="section-title">Projects built for real-world use.</h2></div>
+          <p class="section-intro">Web applications for healthcare and education, plus research software exploring program behavior and LLM-assisted analysis.</p>
         </div>
-        <div class="project-grid">
-          <article class="project-card reveal">
-            <div class="project-topline"><span class="project-type">Program analysis</span><span class="project-number">01</span></div>
-            <h3>Algorithm identification in obfuscated C programs</h3>
-            <p>Developed a Python analysis pipeline to identify algorithms after control-flow flattening with Tigress. Combined static semantic features, rule-based classification, and LLM-assisted analysis, then verified predictions against JSON ground truth.</p>
-            <ul class="tags"><li>Python</li><li>C</li><li>Tigress</li><li>Static analysis</li><li>LLM analysis</li></ul>
+        <div class="project-group">
+          <p class="project-group-label">Web applications</p>
+          <div class="project-grid project-grid--web">
+            <article class="project-card reveal">
+              <div class="project-topline"><span class="project-type">Healthcare platform</span><span class="project-number">01</span></div>
+              <h3>Remote Doctor Platform</h3>
+              <p>Built a web platform for remote doctor consultations, with Laravel backend APIs for authentication and appointments and MySQL data models. Integrated video consultations and improved request handling and validation to keep appointment and session data consistent during simultaneous use.</p>
+              <ul class="tags"><li>PHP</li><li>Laravel</li><li>MySQL</li><li>Video consultation</li><li>Git / GitHub</li></ul>
+            </article>
+            <article class="project-card reveal">
+              <div class="project-topline"><span class="project-type">University system</span><span class="project-number">02</span></div>
+              <h3>Final Year Thesis Project Management System</h3>
+              <p>Built a Laravel and MySQL system for student thesis submissions and supervision. Developed backend services and relational data models for students, supervisors, and project records, with supervisor assignment and progress tracking.</p>
+              <a class="project-link" href="https://swe.application.daffodilvarsity.edu.bd/final_project/public/" target="_blank" rel="noopener noreferrer">Visit the live application ↗</a>
+              <ul class="tags"><li>PHP</li><li>Laravel</li><li>MySQL</li><li>Live application</li></ul>
+            </article>
+            <article class="project-card reveal">
+              <div class="project-topline"><span class="project-type">Feedback application</span><span class="project-number">03</span></div>
+              <h3>Student Feedback System</h3>
+              <p>Developed a PHP web application for collecting and analyzing student feedback about courses and instructors. Implemented backend storage and queries to generate department-level feedback summaries.</p>
+              <ul class="tags"><li>PHP</li><li>Database design</li><li>Reporting</li></ul>
+            </article>
+          </div>
+        </div>
+        <div class="project-group">
+          <p class="project-group-label">Academic research · University of Vienna</p>
+          <div class="project-grid">
+            <article class="project-card reveal">
+              <div class="project-topline"><span class="project-type">Program analysis</span><span class="project-number">04</span></div>
+              <h3>Algorithm identification in obfuscated C programs</h3>
+              <p>Developed a Python analysis pipeline to identify algorithms after control-flow flattening with Tigress. Combined static semantic features, rule-based classification, and LLM-assisted analysis, then verified predictions against JSON ground truth.</p>
+              <ul class="tags"><li>Python</li><li>C</li><li>Tigress</li><li>Static analysis</li><li>LLM analysis</li></ul>
+            </article>
+            <article class="project-card reveal">
+              <div class="project-topline"><span class="project-type">LLM evaluation</span><span class="project-number">05</span></div>
+              <h3>Reconstructing long function-call chains</h3>
+              <p>Built a Python framework to generate C programs and evaluate LLM reconstruction of call chains up to 1,000 functions, including direct calls, function pointers, pointer arrays, structures, and switch-based dispatch.</p>
+              <ul class="tags"><li>Python</li><li>C</li><li>API integration</li><li>Automation</li><li>JSON</li></ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section publications" id="publications">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><p class="eyebrow">Publications</p><h2 class="section-title">Research in print.</h2></div>
+          <p class="section-intro">Two additional co-authored publications in applied machine learning, published in 2022.</p>
+        </div>
+        <div class="publication-grid">
+          <article class="publication-card reveal">
+            <div class="publication-meta"><span>Springer</span><span>Book chapter · 2022</span></div>
+            <h3>A Systematic Study on Tertiary Level Student Tuition Fee Waiver Management During Pandemic Using Machine Learning Approaches</h3>
+            <p class="publication-authors">Asif Khan Shakir, Shanjoy Sutradhar, Ahsanul Hoque Sakib, <strong>Washim Akram</strong>, Md. Abu Saleh, and Mohammad Zoynul Abedin</p>
+            <p class="publication-venue">Advances in Information, Communication and Cybersecurity · pp. 259–273</p>
+            <a class="publication-link" href="https://link.springer.com/chapter/10.1007/978-3-030-91738-8_25" target="_blank" rel="noopener noreferrer">Read publication ↗</a>
           </article>
-          <article class="project-card reveal">
-            <div class="project-topline"><span class="project-type">LLM evaluation</span><span class="project-number">02</span></div>
-            <h3>Reconstructing long function-call chains</h3>
-            <p>Built a Python framework to generate C programs and evaluate LLM reconstruction of call chains up to 1,000 functions, including direct calls, function pointers, pointer arrays, structures, and switch-based dispatch.</p>
-            <ul class="tags"><li>Python</li><li>C</li><li>API integration</li><li>Automation</li><li>JSON</li></ul>
+          <article class="publication-card reveal">
+            <div class="publication-meta"><span>ACM</span><span>Conference paper · 2022</span></div>
+            <h3>A hybrid model for predicting Mobile Price Range using machine learning techniques</h3>
+            <p class="publication-authors">Ahsanul Hoque Sakib, Asif Khan Shakir, Shanjoy Sutradhar, Md. Abu Saleh, <strong>Washim Akram</strong>, and Khalid Been Md. Badruzzaman Biplop</p>
+            <p class="publication-venue">8th International Conference on Computing and Data Engineering (ICCDE 2022) · pp. 86–91</p>
+            <a class="publication-link" href="https://dl.acm.org/doi/abs/10.1145/3512850.3512860" target="_blank" rel="noopener noreferrer">Read publication ↗</a>
           </article>
         </div>
       </div>
@@ -251,7 +306,7 @@
         </div>
         <div class="education-grid">
           <article class="education-card reveal">
-            <span class="education-year">2024 — Present · Final semester</span><h3>Master of Science in Computer Science</h3><p class="education-school">University of Vienna · Austria</p>
+            <span class="education-year">2024 — Present · Final year</span><h3>Master of Science in Computer Science</h3><p class="education-school">University of Vienna · Austria</p>
             <div class="thesis"><span>Master’s thesis</span><p>Trust-Boundary Enforcement for Agentic Reverse Engineering of Obfuscated Binaries: Securing LLM Agents Against Adversarial Artifacts and Tool-Chain Manipulation</p></div>
           </article>
           <article class="education-card reveal"><span class="education-year">2016 — 2020</span><h3>Bachelor of Science in Software Engineering</h3><p class="education-school">Daffodil International University · Bangladesh</p><p class="education-detail">CGPA: 3.95 / 4.00<br>German equivalent: 1.1</p></article>
@@ -268,6 +323,7 @@
             <div class="contact-links">
               <a class="contact-link" href="mailto:akram116223@gmail.com">Email me <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 14 0M13 6l6 6-6 6"></path></svg></a>
               <a class="contact-link" href="https://www.linkedin.com/in/washim-akram-460026184/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"></path></svg></a>
+              <a class="contact-link" href="https://github.com/akramswe" target="_blank" rel="noopener noreferrer">View my GitHub <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"></path></svg></a>
               <a class="contact-link" href="tel:+4368864058036">Call&nbsp;+43&nbsp;688&nbsp;640&nbsp;58036 <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 14 0M13 6l6 6-6 6"></path></svg></a>
             </div>
           </div>
